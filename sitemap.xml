@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Home -->
+  <url>
+    <loc>https://mansournia.info/</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://mansournia.info/portfolio-images/Last-Mile%20Autonomous%20Delivery%20Robot%20Prototype.jpg</image:loc>
+      <image:title>Last-Mile Autonomous Delivery Robot Prototype</image:title>
+      <image:caption>Robotics and automation portfolio of Pouya Mansournia</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mansournia.info/portfolio-images/Warehouse%20Automation%20Solutions.png</image:loc>
+      <image:title>Warehouse Automation Solutions</image:title>
+      <image:caption>Warehouse automation and material handling systems</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mansournia.info/portfolio-images/Nano-Precision%20Motion%20Control%20Systems.png</image:loc>
+      <image:title>Nano-Precision Motion Control Systems</image:title>
+      <image:caption>Piezo-driven nano-precision motion control platform</image:caption>
+    </image:image>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://mansournia.info/#/about</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://mansournia.info/portfolio-images/Profile%20Photo.jpg</image:loc>
+      <image:title>Pouya Mansournia — Robotics Systems Architect</image:title>
+      <image:caption>Profile photo of Pouya Mansournia, Robotics Systems Architect based in Istanbul</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Blog index -->
+  <url>
+    <loc>https://mansournia.info/#/blog</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Blog: Wheel Sorter -->
+  <url>
+    <loc>https://mansournia.info/#/blog-sorter</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mansournia.info/portfolio-images/Wheel-Sorter-D.png</image:loc>
+      <image:title>High-Speed Wheel Sortation System</image:title>
+      <image:caption>Industrial wheel sorter for e-commerce fulfillment center parcel routing</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://mansournia.info/portfolio-images/DC%20Motor%20Control%20Board%20Design.png</image:loc>
+      <image:title>DC Motor Control Board Design</image:title>
+      <image:caption>DC motor control board for wheel sorter actuation</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Blog: Put to Light -->
+  <url>
+    <loc>https://mansournia.info/#/blog-put-to-light</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mansournia.info/portfolio-images/PutPick%20to%20Light.png</image:loc>
+      <image:title>Put-to-Light and Pick-to-Light Warehouse System</image:title>
+      <image:caption>LED-guided warehouse picking and putting station for operator guidance</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Blog: Dimension Detection -->
+  <url>
+    <loc>https://mansournia.info/#/blog-dimension-detection</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mansournia.info/portfolio-images/Dimension%20Detection%20System%20V2.png</image:loc>
+      <image:title>Dimension Weight Scanning and Point Cloud Detection</image:title>
+      <image:caption>3D point cloud dimension detection system for package measurement in logistics</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Blog: IoT -->
+  <url>
+    <loc>https://mansournia.info/#/blog-iot</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mansournia.info/portfolio-images/AcustOne.PNG</image:loc>
+      <image:title>Industrial IoT Monitoring Platform</image:title>
+      <image:caption>Industrial IoT platform for monitoring, sensor data collection, and automation</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Works index -->
+  <url>
+    <loc>https://mansournia.info/#/works</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Works: Robotics Platforms -->
+  <url>
+    <loc>https://mansournia.info/#/work-robotics</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://mansournia.info/portfolio-images/Last-Mile%20Autonomous%20Delivery%20Robot%20Prototype.jpg</image:loc>
+      <image:title>Last-Mile Autonomous Delivery Robot</image:title>
+      <image:caption>Six-wheel autonomous delivery robot with LiDAR navigation</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Works: Manipulators -->
+  <url>
+    <loc>https://mansournia.info/#/work-manipulator</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://mansournia.info/portfolio-images/Manipulator.png</image:loc>
+      <image:title>Robotic Manipulators and End-Effectors</image:title>
+      <image:caption>6-DOF robotic manipulator arm with Dynamixel PRO actuators</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Works: Wheeled Robots -->
+  <url>
+    <loc>https://mansournia.info/#/work-wheels-robot</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Works: UAV -->
+  <url>
+    <loc>https://mansournia.info/#/work-uav</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://mansournia.info/portfolio-images/RoboCup%20Rescue%20UAV%20Platforms.png</image:loc>
+      <image:title>RoboCup Rescue UAV Platforms</image:title>
+      <image:caption>Lightweight UAV quadcopter platforms for RoboCup rescue robotics</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Works: Precision Positioning -->
+  <url>
+    <loc>https://mansournia.info/#/work-precision-positioning</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://mansournia.info/portfolio-images/Piezo-Driven%20Fast%20Steering%20Mirror%20Actuator.png</image:loc>
+      <image:title>Piezo-Driven Fast Steering Mirror Actuator</image:title>
+      <image:caption>Piezo-driven precision actuator with flexure mechanism for nano-positioning</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Works: Material Handling -->
+  <url>
+    <loc>https://mansournia.info/#/work-material-handling</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://mansournia.info/portfolio-images/Industrial%20Conveyor%20System%20Design.png</image:loc>
+      <image:title>Industrial Conveyor and Material Handling Systems</image:title>
+      <image:caption>Industrial conveyor system design for warehouse and logistics automation</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Works: Electronics Design -->
+  <url>
+    <loc>https://mansournia.info/#/work-electronics-design</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <image:image>
+      <image:loc>https://mansournia.info/portfolio-images/High-Frequency%20Four-Layer%20PCB%20Design.png</image:loc>
+      <image:title>Embedded Electronics and PCB Design</image:title>
+      <image:caption>High-frequency four-layer PCB design for industrial automation and robotics</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Works: Machinery -->
+  <url>
+    <loc>https://mansournia.info/#/work-machinery</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Works: Other Projects -->
+  <url>
+    <loc>https://mansournia.info/#/work-other-projects</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Open Source Systems -->
+  <url>
+    <loc>https://mansournia.info/#/open-source</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Achievements -->
+  <url>
+    <loc>https://mansournia.info/#/achievements</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://mansournia.info/portfolio-images/Achievements.png</image:loc>
+      <image:title>Engineering Achievements — Pouya Mansournia</image:title>
+      <image:caption>Robotics and automation engineering milestones and achievements</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://mansournia.info/#/contact</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+</urlset>
