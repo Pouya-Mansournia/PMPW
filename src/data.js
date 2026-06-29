@@ -11,7 +11,6 @@ import {
   MapPin,
   Microscope,
   PackageCheck,
-  PlayCircle,
   Rocket,
   Settings,
   Trophy,
@@ -581,8 +580,7 @@ export const publications = [
 
 export const contacts = [
   { icon: Mail, label: 'Email', value: 'p.mansournia@gmail.com', href: 'mailto:p.mansournia@gmail.com' },
-  { icon: MapPin, label: 'Location', value: 'Istanbul, Turkiye', href: 'https://www.google.com/maps/search/?api=1&query=Istanbul%2C%20Turkiye' },
-  { icon: PlayCircle, label: 'YouTube', value: '@Pouyamansournia', href: 'https://www.youtube.com/@Pouyamansournia' }
+  { icon: MapPin, label: 'Location', value: 'Istanbul, Turkiye', href: 'https://www.google.com/maps/search/?api=1&query=Istanbul%2C%20Turkiye' }
 ];
 
 export const professionalLinks = [
