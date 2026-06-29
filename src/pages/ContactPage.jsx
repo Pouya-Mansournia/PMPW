@@ -1,4 +1,4 @@
-import { Download, Mail, BookOpen, Wrench } from 'lucide-react';
+import { Download, Mail, BookOpen, Wrench, PlayCircle } from 'lucide-react';
 import BackgroundPaths from '../components/BackgroundPaths.jsx';
 import { contacts, resumeFile } from '../data.js';
 import MagneticDock from '../components/MagneticDock.jsx';
@@ -23,6 +23,7 @@ const dockItems = [
   { label: 'Email',        href: 'mailto:p.mansournia@gmail.com',                  icon: <Mail size={22} /> },
   { label: 'ResearchGate', href: 'https://www.researchgate.net/profile/Pouya-Mansournia', icon: <BookOpen size={20} /> },
   { label: 'GrabCAD',      href: 'https://grabcad.com/pouya.mansournia-1',         icon: <Wrench size={20} /> },
+  { label: 'YouTube',      href: 'https://www.youtube.com/@Pouyamansournia',        icon: <PlayCircle size={21} /> },
 ];
 
 export default function ContactPage() {

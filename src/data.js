@@ -11,6 +11,7 @@ import {
   MapPin,
   Microscope,
   PackageCheck,
+  PlayCircle,
   Rocket,
   Settings,
   Trophy,
@@ -580,12 +581,14 @@ export const publications = [
 
 export const contacts = [
   { icon: Mail, label: 'Email', value: 'p.mansournia@gmail.com', href: 'mailto:p.mansournia@gmail.com' },
-  { icon: MapPin, label: 'Location', value: 'Istanbul, Turkiye', href: 'https://www.google.com/maps/search/?api=1&query=Istanbul%2C%20Turkiye' }
+  { icon: MapPin, label: 'Location', value: 'Istanbul, Turkiye', href: 'https://www.google.com/maps/search/?api=1&query=Istanbul%2C%20Turkiye' },
+  { icon: PlayCircle, label: 'YouTube', value: '@Pouyamansournia', href: 'https://www.youtube.com/@Pouyamansournia' }
 ];
 
 export const professionalLinks = [
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/pouya-mansournia/', initials: 'in' },
   { label: 'GitHub', href: 'https://github.com/Pouya-Mansournia', initials: 'GH' },
   { label: 'GrabCAD', href: 'https://grabcad.com/pouya.mansournia-1', initials: 'GC' },
-  { label: 'ResearchGate', href: 'https://www.researchgate.net/profile/Pouya-Mansournia', initials: 'RG' }
+  { label: 'ResearchGate', href: 'https://www.researchgate.net/profile/Pouya-Mansournia', initials: 'RG' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@Pouyamansournia', initials: 'YT' }
 ];

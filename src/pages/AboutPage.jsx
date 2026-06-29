@@ -1,4 +1,4 @@
-import { ExternalLink, Image } from 'lucide-react';
+import { ExternalLink, Image, PlayCircle } from 'lucide-react';
 import { aboutImage } from '../data.js';
 
 export default function AboutPage() {
@@ -48,6 +48,14 @@ export default function AboutPage() {
                 <em>IoT and robotics systems company</em>
               </span>
               <ExternalLink size={18} />
+            </a>
+            <a className="company-link-card portfolio-video-card" href="https://youtu.be/MyxGdC9KTBA" target="_blank" rel="noreferrer">
+              <span>
+                <small>Portfolio Video</small>
+                <strong>Watch my portfolio</strong>
+                <em>See selected engineering work on YouTube</em>
+              </span>
+              <PlayCircle size={19} />
             </a>
           </div>
           <div className="chip-list">
