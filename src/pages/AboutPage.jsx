@@ -49,7 +49,7 @@ export default function AboutPage() {
               </span>
               <ExternalLink size={18} />
             </a>
-            <a className="company-link-card portfolio-video-card" href="https://youtu.be/MyxGdC9KTBA" target="_blank" rel="noreferrer">
+            <a className="company-link-card portfolio-video-card" href="https://www.youtube.com/@Pouyamansournia" target="_blank" rel="noreferrer">
               <span>
                 <small>Portfolio Video</small>
                 <strong>Watch my portfolio</strong>
