@@ -1,9 +1,6 @@
 import { ArrowUpRight, BookOpen, Code2 } from 'lucide-react';
 import { openSourceSystems } from '../data.js';
-
-function goToPage(path) {
-  window.location.hash = `/${path}`;
-}
+import { navigateTo, routeHref } from '../navigation.js';
 
 function SystemCard({ system, compact = false }) {
   const Icon = system.icon;
@@ -64,10 +61,10 @@ export function OpenSourceTeaser({ variant = 'home' }) {
         </p>
       </div>
       <OpenSourceSystemsGrid compact />
-      <button className="secondary-btn open-source-teaser-cta" onClick={() => goToPage('open-source')}>
+      <a className="secondary-btn open-source-teaser-cta" href={routeHref('open-source')} onClick={(event) => navigateTo('open-source', event)}>
         Explore Open Source Work
         <ArrowUpRight size={17} />
-      </button>
+      </a>
     </section>
   );
 }

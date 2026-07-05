@@ -31,6 +31,8 @@ export default function PortfolioGallery({ compact = false, images = portfolioIm
             <img
               src={getImagePath(item)}
               alt={item.alt || item.title}
+              loading="lazy"
+              decoding="async"
               onError={(event) => event.currentTarget.classList.add('is-missing')}
             />
             <div className="image-fallback">

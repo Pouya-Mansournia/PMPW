@@ -11,7 +11,7 @@ export default function AboutPage() {
       <div className="about-profile-card">
         <aside className="about-photo-panel">
           <div className="about-image-frame">
-            <img src={`/portfolio-images/${aboutImage.fileName}`} alt={aboutImage.alt} onError={(event) => event.currentTarget.classList.add('is-missing')} />
+            <img src={`/portfolio-images/${aboutImage.fileName}`} alt={aboutImage.alt} width="200" height="200" decoding="async" onError={(event) => event.currentTarget.classList.add('is-missing')} />
             <div className="image-fallback">
               <Image size={34} />
               <strong>{aboutImage.title}</strong>
@@ -26,7 +26,7 @@ export default function AboutPage() {
         </aside>
 
         <div className="about-copy-panel">
-          <h2>Engineer with a system-level view of robotics and automation.</h2>
+          <h1 className="semantic-page-title">Engineer with a system-level view of robotics and automation.</h1>
           <p>
             My work combines mechanical design, mechatronics, embedded systems, automation and practical product development.
             I am interested in building real engineering systems that move from idea to prototype, testing and deployment.

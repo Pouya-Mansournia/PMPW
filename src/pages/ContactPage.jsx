@@ -32,7 +32,7 @@ export default function ContactPage() {
       <BackgroundPaths />
       <div className="contact-card" style={{ position: 'relative', zIndex: 1 }}>
         <p className="eyebrow">Contact</p>
-        <h2>Let's connect.</h2>
+        <h1 className="semantic-page-title">Let's connect.</h1>
         <p>
           For robotics, automation, mechatronics, precision motion, PhD collaboration or engineering opportunities,
           you can contact me directly.

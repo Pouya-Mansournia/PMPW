@@ -1,9 +1,6 @@
 import { ArrowLeft } from 'lucide-react';
 import PortfolioGallery from '../components/PortfolioGallery.jsx';
-
-function goToPage(path) {
-  window.location.hash = `/${path}`;
-}
+import { navigateTo, routeHref } from '../navigation.js';
 
 function hasDisplayableImage(image) {
   return Boolean(image?.fileName);
@@ -18,10 +15,10 @@ export default function DetailPage({ item, parentPath = 'home' }) {
 
   return (
     <section className="page-section detail-page">
-      <button className="back-link" onClick={() => goToPage(parentPath)}>
+      <a className="back-link" href={routeHref(parentPath)} onClick={(event) => navigateTo(parentPath, event)}>
         <ArrowLeft size={18} />
-        Back
-      </button>
+        Back to {parentPath === 'blog' ? 'engineering articles' : 'projects'}
+      </a>
 
       <div className="detail-hero">
         <div>
@@ -48,6 +45,7 @@ export default function DetailPage({ item, parentPath = 'home' }) {
               <img
                 src={`/portfolio-images/${coverImage.fileName}`}
                 alt={coverImage.alt || coverImage.title}
+                decoding="async"
                 onError={(event) => event.currentTarget.classList.add('is-missing')}
               />
             ) : (

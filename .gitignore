@@ -1,6 +1,67 @@
+# Dependencies
 node_modules/
+
+# Generated build output and caches
 dist/
 .vite/
+.ssr/
+coverage/
+
+# Environment files (keep the placeholder template public)
 .env
-.env.local
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
 npm-debug.log*
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary, backup, and local database files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*~
+*.sqlite
+*.sqlite3
+*.db
+
+# Local agent and private working directories
+.agents/
+.codex/
+private/
+docs/internal/
+notes/
+drafts/
+conversation-exports/
+.ai/
+ai-notes/
+*.private.md
+
+# Local-only SEO, GEO, validation, and planning reports
+/CONTENT-GAPS.md
+/GITHUB-ENTITY-ALIGNMENT.md
+/INTERNAL-LINKING-MAP.md
+/OFFSITE-ENTITY-CHECKLIST.md
+/PERFORMANCE-CHANGES.md
+/SEARCH-CONSOLE-SETUP.md
+/SEO-GEO-30-DAY-PLAN.md
+/SEO-GEO-AUDIT.md
+/SEO-GEO-VALIDATION.md
+/VISUAL-CHANGE-REVIEW.md
+
+# Local-only public-folder reference files and unused source media
+# scripts/prerender.mjs also removes these from dist before deployment.
+/public/portfolio-images/README.md
+/public/resume/README.md
+/public/portfolio-images/3D Point Cloud Visualization.png
+/public/portfolio-images/Integrated Put-to-Light Solution.jpg
+/public/portfolio-images/MRL Middle-Size Platform.png

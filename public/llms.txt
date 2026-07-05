@@ -1,53 +1,31 @@
 # Pouya Mansournia
 
-> Robotics Systems Architect, Mechatronics Engineer, Product Builder, Technical Founder, Entrepreneur, and Open-Source Framework Builder.
+> Experimental navigation aid for language-model tools. This file is not required by Google and does not guarantee ranking, indexing, AI Overview inclusion, or citation.
 
-Pouya Mansournia builds robotics, automation, embedded electronics, precision motion, warehouse automation, product execution systems, and open-source execution frameworks. The website is a technical and product portfolio for robotics and AI engineering opportunities, product manager and product builder discovery, entrepreneurship, PhD applications, technical founder credibility, and open-source systems work.
+Pouya Mansournia is a robotics systems architect and mechatronics engineer working across autonomous mobile robots, warehouse automation, embedded systems, precision mechanisms, product development, AI integration, and industrial automation.
 
-## Key Pages
+## Canonical pages
 
 - Home: https://mansournia.info/
-- About: https://mansournia.info/#/about
-- Projects: https://mansournia.info/#/works
-- Research: https://mansournia.info/#/publications
-- Engineering Notes: https://mansournia.info/#/blog
-- Open Source Systems: https://mansournia.info/#/open-source
-- Contact: https://mansournia.info/#/contact
+- About: https://mansournia.info/about/
+- Projects: https://mansournia.info/projects/
+- Research and publications: https://mansournia.info/research/
+- Engineering articles: https://mansournia.info/articles/
+- Open-source systems: https://mansournia.info/open-source/
+- Achievements: https://mansournia.info/achievements/
+- Contact: https://mansournia.info/contact/
 
-## Open Source Systems
-
-- Foundry OS: https://github.com/Pouya-Mansournia/FoundryOS
-  - Product and startup execution operating framework.
-  - Topics: product strategy, GTM, business model design, team structure, founder decision-making.
-- REOS: https://github.com/Pouya-Mansournia/REOS
-  - Robotics engineering operating system.
-  - Topics: robotics system design, hardware/software integration, documentation, testing, deployment, standards.
-- ARCHON OS: https://github.com/Pouya-Mansournia/ARCHON
-  - AI agentic architecture and decision operating system.
-  - Topics: AI-agent workflows, software architecture, technical decision-making, system design, engineering execution loops.
-- GrabCAD Library: https://grabcad.com/pouya.mansournia-1
-  - Public engineering CAD model library.
-  - Topics: mechanical design, robotics components, automation hardware, CAD references, open engineering sharing.
-
-## Technical Focus
-
-- Robotics systems architecture
-- Mechatronics engineering
-- Product management
-- Product building
-- Entrepreneurship
-- Technical founder work
-- Venture building
-- Product strategy and product execution
-- Autonomous mobile robots, AGVs, AMRs, and delivery robots
-- Warehouse automation, wheel sorters, conveyors, put-to-light and pick-to-light systems
-- Embedded electronics, PCB design, STM32, ESP32, motor control, industrial IoT
-- Precision motion, piezo actuation, flexure mechanisms, nano-positioning
-- Open-source frameworks for engineering execution and AI-agent workflows
-
-## Professional Links
+## Verified public profiles listed on the website
 
 - GitHub: https://github.com/Pouya-Mansournia
 - LinkedIn: https://www.linkedin.com/in/pouya-mansournia/
 - ResearchGate: https://www.researchgate.net/profile/Pouya-Mansournia
 - GrabCAD: https://grabcad.com/pouya.mansournia-1
+- YouTube: https://www.youtube.com/@Pouyamansournia
+
+## Open-source resources
+
+- Foundry OS: https://github.com/Pouya-Mansournia/FoundryOS
+- REOS: https://github.com/Pouya-Mansournia/REOS
+- ARCHON OS: https://github.com/Pouya-Mansournia/ARCHON
+- GrabCAD engineering library: https://grabcad.com/pouya.mansournia-1

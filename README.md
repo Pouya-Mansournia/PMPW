@@ -2,13 +2,23 @@
 
 This repository contains the official personal portfolio website of **Pouya Mansournia**.
 
-The website presents his professional background, engineering experience, robotics and mechatronics projects, publications, awards, and selected achievements.
+The website presents his professional background, engineering experience, robotics and mechatronics projects, publications, and selected achievements.
 
 All information, technical descriptions, images, project details, and career-related content presented on this website are based on real projects and actual professional experience.
 
 ## Website
 
 **https://mansournia.info**
+
+## Architecture
+
+The site uses React and Vite. Production builds prerender every canonical route into crawlable HTML for GitHub Pages, then hydrate the existing React interface in the browser. Route metadata, canonical URLs, Open Graph/Twitter tags, and JSON-LD are generated from centralized source files.
+
+```bash
+npm run build
+```
+
+The build also validates route metadata, JSON-LD syntax, the sitemap, and robots.txt.
 
 ## Purpose
 

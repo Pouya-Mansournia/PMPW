@@ -6,7 +6,8 @@
   "homepage": "https://mansournia.info",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite build",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir .ssr && node scripts/prerender.mjs && node scripts/validate-seo.mjs",
+    "validate:seo": "node scripts/validate-seo.mjs",
     "preview": "vite preview --host 0.0.0.0",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"

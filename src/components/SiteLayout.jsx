@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { navItems, professionalLinks } from '../data.js';
-
-function goToPage(path) {
-  window.location.hash = `/${path}`;
-}
+import { navigateTo, routeHref } from '../navigation.js';
 
 const footerLinks = professionalLinks.filter((link) => link.label === 'LinkedIn');
 
@@ -59,8 +56,17 @@ export default function SiteLayout({ children, activeRoute = 'home' }) {
     };
   }, [open]);
 
-  const handleNav = (path) => {
-    goToPage(path);
+  useEffect(() => {
+    if (!open) return undefined;
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') setOpen(false);
+    };
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [open]);
+
+  const handleNav = (path, event) => {
+    navigateTo(path, event);
     setOpen(false);
     setActiveDropdown(null);
   };
@@ -88,12 +94,12 @@ export default function SiteLayout({ children, activeRoute = 'home' }) {
   return (
     <div className="site-shell">
       <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
-        <button className="brand" onClick={() => handleNav('home')}>
+        <a className="brand" href={routeHref('home')} onClick={(event) => handleNav('home', event)} aria-label="Pouya Mansournia — home">
           <span className="brand-text">
             <strong>Pouya Mansournia</strong>
             <small>Robotics | Automation | Precision Motion</small>
           </span>
-        </button>
+        </a>
 
         <nav className="desktop-nav" aria-label="Main navigation">
           {navItems.map((item) => {
@@ -103,26 +109,38 @@ export default function SiteLayout({ children, activeRoute = 'home' }) {
 
             return (
               <div className={`nav-group ${isOpen ? 'open' : ''}`} key={item.path}>
-                <button
+                <a
+                  href={routeHref(item.path)}
                   className={isActive ? 'is-active' : ''}
-                  onClick={() => hasChildren ? toggleDropdown(item.path) : handleNav(item.path)}
+                  onClick={(event) => {
+                    if (hasChildren) {
+                      event.preventDefault();
+                      toggleDropdown(item.path);
+                    } else {
+                      handleNav(item.path, event);
+                    }
+                  }}
+                  aria-expanded={hasChildren ? isOpen : undefined}
+                  aria-current={isActive ? 'page' : undefined}
                 >
                   {item.label}
-                </button>
+                </a>
 
                 {hasChildren && (
                   <div className={`nav-dropdown ${isOpen ? 'is-open' : ''}`}>
-                    <button className="dropdown-parent" onClick={() => handleNav(item.path)}>
+                    <a className="dropdown-parent" href={routeHref(item.path)} onClick={(event) => handleNav(item.path, event)}>
                       {item.allLabel || item.label}
-                    </button>
+                    </a>
                     {item.children.map((child) => (
-                      <button
+                      <a
+                        href={routeHref(child.path)}
                         className={activeRoute === child.path ? 'is-active' : ''}
                         key={child.path}
-                        onClick={() => handleNav(child.path)}
+                        onClick={(event) => handleNav(child.path, event)}
+                        aria-current={activeRoute === child.path ? 'page' : undefined}
                       >
                         {child.label}
-                      </button>
+                      </a>
                     ))}
                   </div>
                 )}
@@ -131,37 +149,45 @@ export default function SiteLayout({ children, activeRoute = 'home' }) {
           })}
         </nav>
 
-        <button className="menu-button" onClick={() => setOpen((current) => !current)} aria-label="Toggle menu">
+        <button
+          className="menu-button"
+          onClick={() => setOpen((current) => !current)}
+          aria-label={open ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+        >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </header>
 
       {open && (
-        <div className="mobile-menu">
+        <nav id="mobile-navigation" className="mobile-menu" aria-label="Mobile navigation">
           {navItems.map((item) => {
             const isActive = isRouteInGroup(item);
 
             return (
               <div key={item.path}>
-                <button className={isActive ? 'is-active' : ''} onClick={() => handleNav(item.path)}>
+                <a className={isActive ? 'is-active' : ''} href={routeHref(item.path)} onClick={(event) => handleNav(item.path, event)} aria-current={isActive ? 'page' : undefined}>
                   {item.label}
-                </button>
+                </a>
                 {item.children?.map((child) => (
-                  <button
+                  <a
+                    href={routeHref(child.path)}
                     className={`mobile-sub ${activeRoute === child.path ? 'is-active' : ''}`}
                     key={child.path}
-                    onClick={() => handleNav(child.path)}
+                    onClick={(event) => handleNav(child.path, event)}
+                    aria-current={activeRoute === child.path ? 'page' : undefined}
                   >
                     {child.label}
-                  </button>
+                  </a>
                 ))}
               </div>
             );
           })}
-        </div>
+        </nav>
       )}
 
-      <main>{children}</main>
+      <main id="main-content">{children}</main>
 
       <footer className="site-footer">
         <div className="footer-copy">

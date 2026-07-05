@@ -4,10 +4,7 @@ import PortfolioGallery from '../components/PortfolioGallery.jsx';
 import { useTypewriter } from '../hooks/useTypewriter.js';
 import HeroVideoBackground from '../components/HeroVideoBackground.jsx';
 import { OpenSourceTeaser } from '../components/OpenSourceSystems.jsx';
-
-function goToPage(path) {
-  window.location.hash = `/${path}`;
-}
+import { navigateTo, routeHref } from '../navigation.js';
 
 export default function HomePage() {
   const typed = useTypewriter(['Robotics & Automation', 'Warehouse Automation', 'Precision Motion', 'Mechatronics'], 120, 2200);
@@ -27,14 +24,14 @@ export default function HomePage() {
           Specializing in autonomous robots, warehouse automation, embedded electronics, and precision motion systems.
         </p>
         <div className="hero-actions">
-          <button className="secondary-btn" onClick={() => goToPage('contact')}>Contact Me</button>
+          <a className="secondary-btn" href={routeHref('contact')} onClick={(event) => navigateTo('contact', event)}>Contact Me</a>
           <a className="secondary-btn" href={resumeFile.href} download={resumeFile.fileName}>
             <Download size={18} />
             {resumeFile.label}
           </a>
-          <button className="icon-btn" onClick={() => goToPage('about')} aria-label="Open resume profile">
+          <a className="icon-btn" href={routeHref('about')} onClick={(event) => navigateTo('about', event)} aria-label="View Pouya Mansournia’s full profile">
             <BriefcaseBusiness size={19} />
-          </button>
+          </a>
         </div>
 
         <div className="resume-highlight-row">
@@ -81,10 +78,10 @@ export default function HomePage() {
               </article>
             ))}
           </div>
-          <button className="secondary-btn" onClick={() => goToPage('about')}>
+          <a className="secondary-btn" href={routeHref('about')} onClick={(event) => navigateTo('about', event)}>
             <BriefcaseBusiness size={18} />
-            Full Profile
-          </button>
+            View Pouya Mansournia’s full profile
+          </a>
         </div>
         <div className="hero-visual" aria-label="Robotics portfolio hero visual — last-mile autonomous delivery robot">
           <div className="profile-card">
@@ -92,6 +89,10 @@ export default function HomePage() {
               <img
                 src={`/portfolio-images/${profileImage.fileName}`}
                 alt={profileImage.alt}
+                width="853"
+                height="1280"
+                loading="lazy"
+                decoding="async"
                 onError={(event) => event.currentTarget.classList.add('is-missing')}
               />
               <div className="profile-image-fallback">

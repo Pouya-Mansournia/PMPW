@@ -7,11 +7,11 @@ export default function AchievementsPage() {
       <BackgroundPaths />
       <div className="section-title" style={{ position: 'relative', zIndex: 1 }}>
         <p className="eyebrow">Achievements</p>
-        <h2>Signals of ownership, execution and technical depth.</h2>
+        <h1 className="semantic-page-title">Signals of ownership, execution and technical depth.</h1>
       </div>
       <div className="achievements-layout" style={{ position: 'relative', zIndex: 1 }}>
         <div className="achievement-image-frame">
-          <img src="/portfolio-images/Achievements.png" alt="Achievements visual" onError={(event) => event.currentTarget.classList.add('is-missing')} />
+          <img src="/portfolio-images/Achievements.png" alt="Collage of Pouya Mansournia’s robotics, automation, and engineering work" loading="lazy" decoding="async" onError={(event) => event.currentTarget.classList.add('is-missing')} />
         </div>
         <div className="achievement-list">
           {achievements.map(({ title, text, icon: Icon }) => (

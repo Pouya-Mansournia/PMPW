@@ -18,7 +18,17 @@ Verify the production build before publishing:
 npm run build
 ```
 
-Vite writes the production files to `dist/`.
+Vite writes the production files to `dist/`. The build also prerenders clean route directories and runs SEO validation. Do not deploy if that validation fails.
+
+Optional owner-supplied verification tokens can be injected at build time without committing them:
+
+```powershell
+$env:GOOGLE_SITE_VERIFICATION='owner-provided-token'
+$env:BING_SITE_VERIFICATION='owner-provided-token'
+npm run build
+```
+
+Use real tokens only. DNS verification remains the preferred option for a Google Search Console Domain property.
 
 ## 3. Deploy to GitHub Pages
 
@@ -42,6 +52,8 @@ In the GitHub repository:
 6. Click **Save**.
 
 GitHub Pages will serve the files published by `npm run deploy`.
+
+After deployment, verify direct requests to `/about/`, `/projects/`, `/research/`, `/articles/`, and project detail routes. Each route is emitted as its own `index.html` directory entry so it works without a client-side hash.
 
 ## 5. Configure the Custom Domain
 

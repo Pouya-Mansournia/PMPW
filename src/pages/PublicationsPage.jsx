@@ -9,7 +9,7 @@ export default function PublicationsPage() {
       <div className="publications-header">
         <div>
           <p className="eyebrow">Publications</p>
-          <h2>Research and publications.</h2>
+          <h1 className="semantic-page-title">Research and publications.</h1>
           <p className="lead">Selected papers, team description papers and submitted peer-reviewed manuscripts.</p>
         </div>
 
