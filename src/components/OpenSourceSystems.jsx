@@ -21,12 +21,12 @@ function SystemCard({ system, compact = false }) {
         ))}
       </div>
       <div className="open-source-actions">
-        <a href={system.github} target="_blank" rel="noreferrer">
+        <a href={system.github} target="_blank" rel="noopener noreferrer">
           <Code2 size={16} />
           {system.primaryLabel || 'View GitHub'}
         </a>
         {!compact && system.documentation && (
-            <a href={system.documentation} target="_blank" rel="noreferrer">
+            <a href={system.documentation} target="_blank" rel="noopener noreferrer">
               <BookOpen size={16} />
               Read Documentation
             </a>

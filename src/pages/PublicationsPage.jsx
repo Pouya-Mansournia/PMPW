@@ -14,7 +14,7 @@ export default function PublicationsPage() {
         </div>
 
         {researchGate && (
-          <a className="publication-profile-link" href={researchGate.href} target="_blank" rel="noreferrer">
+          <a className="publication-profile-link" href={researchGate.href} target="_blank" rel="noopener noreferrer">
             ResearchGate
             <ExternalLink size={16} />
           </a>

@@ -41,7 +41,7 @@ export default function AboutPage() {
               <strong>Founder-minded engineering</strong>
               <span>Turning technical systems into reusable frameworks, open-source projects, and practical products.</span>
             </div>
-            <a className="company-link-card" href="https://x-robotiics.com/" target="_blank" rel="noreferrer">
+            <a className="company-link-card" href="https://x-robotiics.com/" target="_blank" rel="noopener noreferrer">
               <span>
                 <small>Company</small>
                 <strong>X-Robotiics</strong>
@@ -49,7 +49,7 @@ export default function AboutPage() {
               </span>
               <ExternalLink size={18} />
             </a>
-            <a className="company-link-card portfolio-video-card" href="https://www.youtube.com/@Pouyamansournia" target="_blank" rel="noreferrer">
+            <a className="company-link-card portfolio-video-card" href="https://www.youtube.com/@Pouyamansournia" target="_blank" rel="noopener noreferrer">
               <span>
                 <small>Portfolio Video</small>
                 <strong>Watch my portfolio</strong>

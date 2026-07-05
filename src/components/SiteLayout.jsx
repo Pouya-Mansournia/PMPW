@@ -196,7 +196,7 @@ export default function SiteLayout({ children, activeRoute = 'home' }) {
         </div>
         <nav className="footer-socials" aria-label="Professional links">
           {footerLinks.map(({ label, href, initials }) => (
-            <a href={href} key={label} target="_blank" rel="noreferrer" aria-label={label} title={label}>
+            <a href={href} key={label} target="_blank" rel="noopener noreferrer" aria-label={label} title={label}>
               <span className="social-initials">{initials}</span>
               <span>{label}</span>
             </a>

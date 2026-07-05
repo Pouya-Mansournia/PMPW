@@ -24,7 +24,7 @@ export default function OpenSourcePage() {
               <ArrowDown size={18} />
               Explore Projects
             </a>
-            <a className="secondary-btn" href={githubProfile} target="_blank" rel="noreferrer">
+            <a className="secondary-btn" href={githubProfile} target="_blank" rel="noopener noreferrer">
               <Code2 size={18} />
               View GitHub
             </a>
