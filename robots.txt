@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://mansournia.info/sitemap.xml
-LLMs: https://mansournia.info/llms.txt
