@@ -1,0 +1,6 @@
+Contact: mailto:contact@mansournia.info
+Expires: 2026-12-31T23:59:59.000Z
+Preferred-Languages: en
+Canonical: https://mansournia.info/.well-known/security.txt
+Policy: https://github.com/Pouya-Mansournia/PMPW/security/policy
+Acknowledgments: https://github.com/Pouya-Mansournia/PMPW/security/advisories
