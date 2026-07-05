@@ -126,6 +126,7 @@ function personEntity() {
     sameAs: [
       'https://github.com/Pouya-Mansournia',
       'https://www.linkedin.com/in/pouya-mansournia/',
+      'https://adplist.org/mentors/pmansourniagmailcom-mr7v8q8t',
       'https://www.researchgate.net/profile/Pouya-Mansournia',
       'https://grabcad.com/pouya.mansournia-1',
       'https://www.youtube.com/@Pouyamansournia'

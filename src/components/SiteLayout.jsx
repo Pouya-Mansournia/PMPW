@@ -3,7 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { navItems, professionalLinks } from '../data.js';
 import { navigateTo, routeHref } from '../navigation.js';
 
-const footerLinks = professionalLinks.filter((link) => link.label === 'LinkedIn');
+const footerLinks = professionalLinks.filter((link) => ['LinkedIn', 'ADPList'].includes(link.label));
 
 export default function SiteLayout({ children, activeRoute = 'home' }) {
   const [open, setOpen] = useState(false);
