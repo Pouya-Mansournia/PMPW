@@ -5,7 +5,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import App from './App.jsx';
 import './index.css';
+import {
+  initializeAnalytics,
+  initializeClickTracking,
+} from './analytics.js';
 
+initializeAnalytics();
+initializeClickTracking();
 gsap.registerPlugin(ScrollTrigger);
 
 const lenis = new Lenis();

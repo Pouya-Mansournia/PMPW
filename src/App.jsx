@@ -12,6 +12,7 @@ import DetailPage from './pages/DetailPage.jsx';
 import { blogPosts, works } from './data.js';
 import { applySeo } from './seo.js';
 import { routeFromBrowserLocation } from './navigation.js';
+import { capturePageView } from './analytics.js';
 
 const pageRoutes = ['home', 'about', 'publications', 'blog', 'works', 'open-source', 'achievements', 'contact'];
 
@@ -38,7 +39,12 @@ export default function App({ initialRoute }) {
   ]), []);
 
   const detailPage = detailRoutes[route];
-  const resolvedRoute = detailPage || pageRoutes.includes(route) ? route : 'not-found';
+  const resolvedRoute =
+    detailPage || pageRoutes.includes(route) ? route : 'not-found';
+
+  useEffect(() => {
+    capturePageView(resolvedRoute);
+  }, [resolvedRoute]);
 
   useEffect(() => {
     applySeo(resolvedRoute);
