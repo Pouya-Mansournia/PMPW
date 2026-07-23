@@ -22,13 +22,22 @@ export default function PublicationsPage() {
       </div>
 
       <div className="publications-list">
-        {publications.map(({ title, venue, year, text, highlights }) => (
+        {publications.map(({ title, venue, year, href, text, highlights }) => (
           <article className="publication-card" key={title}>
             <div className="publication-meta">
               <span>{year}</span>
               <strong>{venue}</strong>
             </div>
-            <h3>{title}</h3>
+            <h3>
+              {href ? (
+                <a className="publication-title-link" href={href} target="_blank" rel="noopener noreferrer">
+                  {title}
+                  <ExternalLink size={18} />
+                </a>
+              ) : (
+                title
+              )}
+            </h3>
             <p>{text}</p>
             <div className="publication-tags" aria-label="Publication topics">
               {highlights.slice(0, 3).map((item) => (

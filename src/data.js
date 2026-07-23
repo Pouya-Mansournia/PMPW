@@ -538,6 +538,15 @@ export const achievements = [
 export const publications = [
   {
     icon: BookOpen,
+    title: 'Advanced Mobile Robotics Book',
+    venue: 'Online robotics book',
+    year: '2026',
+    href: 'https://pouya-mansournia.github.io/advanced-mobile-robotics-book/',
+    text: 'Open online book covering advanced mobile robotics topics, made available as a dedicated GitHub Pages publication.',
+    highlights: ['Mobile Robotics', 'Online Book', 'Robotics Education', 'GitHub Pages']
+  },
+  {
+    icon: BookOpen,
     title: 'Distributed Active Sensing for Autonomous Indoor Acoustic Optimization Using Reverberation-Time Estimation and Adaptive Treatment Recommendation',
     venue: 'Peer-reviewed journal manuscript',
     year: 'Under Review 2026',
