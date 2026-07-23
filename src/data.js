@@ -566,14 +566,16 @@ export const publications = [
     title: 'Localization and Navigation Omni-directional Robots based on Sensors Fusion and Particle Filter',
     venue: 'The 9th Joint Conference on Artificial Intelligence & Robotics and the 2nd RoboCup Asia-Pacific International Symposium',
     year: 'Nov 30, 2018',
+    href: 'https://ieeexplore.ieee.org/document/8769756',
     text: 'Conference publication focused on localization and navigation for omni-directional robots using sensor fusion and particle filter methods.',
     highlights: ['Omni-directional Robots', 'Sensor Fusion', 'Particle Filter', 'Localization']
   },
   {
     icon: FileText,
-    title: 'MRL@WORK 2018 Team Description Paper for RoboCup 2018 Montreal Canada',
+    title: 'MRL@WORK 2018 Team Description Paper',
     venue: 'The International Symposium of RoboCup, Montreal, Canada',
-    year: 'Nov 30, 2017',
+    year: '2018',
+    href: 'https://tdp.robocup.org/tdp_team/mrlwork/',
     text: 'Team description paper documenting the MRL@WORK robotics platform, system architecture, competition strategy and applied robot capabilities.',
     highlights: ['RoboCup', 'MRL@WORK', 'Team Description Paper', 'Robotics Platform']
   },
