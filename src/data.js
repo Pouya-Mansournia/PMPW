@@ -572,6 +572,15 @@ export const publications = [
   },
   {
     icon: FileText,
+    title: 'MRL@Work 2019 Team Description Paper',
+    venue: 'RoboCupIndustrial RoboCup@Work, RoboCup 2019',
+    year: '2019',
+    href: 'https://tdp.robocup.org/wp-content/uploads/tdp/robocup/2019/robocupindustrial-robocup-at-work/mrl-at-work-152/robocup-2019-robocupindustrial-robocup-at-work-mrl-at-work1wK2MJf85R.pdf',
+    text: 'Team description paper for the MRL@Work entry in RoboCupIndustrial RoboCup@Work 2019, documenting the team platform, system architecture and applied industrial robotics capabilities.',
+    highlights: ['RoboCup 2019', 'MRL@Work', 'RoboCup@Work', 'Industrial Robotics']
+  },
+  {
+    icon: FileText,
     title: 'MRL@WORK 2018 Team Description Paper',
     venue: 'The International Symposium of RoboCup, Montreal, Canada',
     year: '2018',
