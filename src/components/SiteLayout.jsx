@@ -164,12 +164,23 @@ export default function SiteLayout({ children, activeRoute = 'home' }) {
         <nav id="mobile-navigation" className="mobile-menu" aria-label="Mobile navigation">
           {navItems.map((item) => {
             const isActive = isRouteInGroup(item);
+            const hasChildren = item.children?.length > 0;
 
             return (
               <div key={item.path}>
                 <a className={isActive ? 'is-active' : ''} href={routeHref(item.path)} onClick={(event) => handleNav(item.path, event)} aria-current={isActive ? 'page' : undefined}>
                   {item.label}
                 </a>
+                {hasChildren && (
+                  <a
+                    href={routeHref(item.path)}
+                    className={`mobile-sub ${activeRoute === item.path ? 'is-active' : ''}`}
+                    onClick={(event) => handleNav(item.path, event)}
+                    aria-current={activeRoute === item.path ? 'page' : undefined}
+                  >
+                    {item.allLabel || item.label}
+                  </a>
+                )}
                 {item.children?.map((child) => (
                   <a
                     href={routeHref(child.path)}
