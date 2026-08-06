@@ -20,6 +20,12 @@ const pageSeo = {
     image: `${SITE_URL}/portfolio-images/Profile%20Photo.jpg`,
     type: 'profile'
   },
+  'product-journey': {
+    title: 'Product Journey | Pouya Mansournia',
+    description: "The evolution of Pouya Mansournia's work from engineering and robotics into product ownership, product strategy, innovation management, and business thinking.",
+    image: `${SITE_URL}/portfolio-images/Profile%20Photo.jpg`,
+    type: 'website'
+  },
   works: {
     title: 'Robotics and Automation Projects | Pouya Mansournia',
     description: 'Explore Pouya Mansournia’s projects across mobile robotics, manipulators, UAV systems, precision positioning, warehouse automation, embedded electronics, and industrial machinery.',
@@ -94,7 +100,7 @@ export function getSeo(route) {
   return {
     ...page,
     image: page.image || DEFAULT_SOCIAL_IMAGE,
-    imageAlt: route === 'about'
+    imageAlt: route === 'about' || route === 'product-journey'
       ? 'Pouya Mansournia profile photograph'
       : 'Last-mile autonomous delivery robot prototype from Pouya Mansournia’s engineering portfolio',
     robots: page.robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',

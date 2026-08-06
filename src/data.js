@@ -32,7 +32,8 @@ export const navItems = [
     path: 'about',
     allLabel: 'Profile',
     children: [
-      { label: 'Achievements', path: 'achievements' }
+      { label: 'Achievements', path: 'achievements' },
+      { label: 'Product Journey', path: 'product-journey' }
     ]
   },
   {
@@ -610,4 +611,168 @@ export const professionalLinks = [
   { label: 'GrabCAD', href: 'https://grabcad.com/pouya.mansournia-1', initials: 'GC' },
   { label: 'ResearchGate', href: 'https://www.researchgate.net/profile/Pouya-Mansournia', initials: 'RG' },
   { label: 'YouTube', href: 'https://www.youtube.com/@Pouyamansournia', initials: 'YT' }
+];
+
+export const journeyStages = [
+  {
+    period: '2017',
+    title: 'Engineering',
+    subtitle: 'Learning how to build.',
+    body: [
+      'My early work was rooted in mechanical engineering, electronics, robotics, embedded systems, and physical product development.',
+      'At that stage, most of my attention was focused on technical questions: how a mechanism should work, how components should interact, how software and hardware should communicate, and how a system could be made reliable enough for the real world.'
+    ],
+    capabilities: ['Mechanical Engineering', 'Robotics', 'Embedded Systems', 'System Design', 'Prototyping']
+  },
+  {
+    period: '2019',
+    title: 'Product Engineering',
+    subtitle: 'Learning what should be built.',
+    body: [
+      'As my responsibilities grew, engineering decisions increasingly became product decisions.',
+      'At Tarfand, I moved into Product Engineering Management and later broader technical leadership. Working with a multidisciplinary team of approximately 18 people exposed me to the full path between engineering, customer requirements, product delivery, team execution, and commercial outcomes.',
+      'Products we developed eventually reached markets including Russia and Iraq.',
+      'This was where I began seeing engineering, product, team, and market as parts of the same system.'
+    ],
+    capabilities: ['Product Engineering', 'Team Leadership', 'Customer Requirements', 'Product Delivery', 'Technical Ownership']
+  },
+  {
+    period: 'Digikala',
+    title: 'Product Thinking at Operational Scale',
+    subtitle: 'Learning how decisions behave at scale.',
+    body: [
+      'My work at Digikala introduced a very different environment.',
+      'At large operational scale, a technical improvement is rarely just technical. Decisions around automation, reliability, throughput, process design, and system architecture directly affect operating cost, workforce capacity, customer experience, and business performance.',
+      'This experience changed how I evaluated technology. The question was no longer only "Can we build it?" It became "Should we build it, where does it create the most leverage, and how do we measure the result?"'
+    ],
+    capabilities: ['Operations', 'Automation Strategy', 'Scale', 'Business Impact', 'Data-Informed Decisions']
+  },
+  {
+    period: 'X-ROBOTIICS',
+    title: '0→1 Product Building',
+    subtitle: 'Learning how technology becomes a product.',
+    body: [
+      'At X-ROBOTIICS, my scope expanded from technical execution to end-to-end product ownership.',
+      'I worked across problem discovery, customer needs, value proposition design, system architecture, product development, commercialization, RevOps, and early market validation.',
+      'This was where product stopped being something adjacent to engineering and became a discipline I actively practiced.'
+    ],
+    capabilities: ['0→1', 'Product Discovery', 'Value Proposition', 'Product Strategy', 'GTM', 'RevOps']
+  },
+  {
+    period: 'DBA',
+    title: 'Innovation Management & FoundryOS',
+    subtitle: 'Turning experience into a repeatable system.',
+    body: [
+      'My DBA studies in Innovation Management gave me an opportunity to step back and structure many of the methods I had learned through engineering, product development, startups, and operations.',
+      'One result of that process became FoundryOS: an evolving framework for thinking systematically about discovery, product strategy, business models, GTM, execution, and decision-making.'
+    ],
+    capabilities: ['Innovation Management', 'Product Systems', 'Strategy', 'Business Models', 'GTM', 'Execution']
+  }
+];
+
+export const productProcessSteps = ['Problem', 'Discovery', 'Evidence', 'Opportunity', 'Value Proposition', 'Build', 'Measure', 'GTM', 'Scale'];
+
+export const productCapabilityGroups = [
+  {
+    title: 'Discover',
+    subtitle: 'Understand the problem before designing the solution.',
+    items: ['Customer interviews', 'Jobs to Be Done', 'Pain-point analysis', 'Workflow mapping', 'Market research', 'Existing behavior analysis']
+  },
+  {
+    title: 'Decide',
+    subtitle: 'Turn evidence into product choices.',
+    items: ['Opportunity framing', 'Prioritization', 'Product strategy', 'Business case', 'Value proposition', 'Roadmapping']
+  },
+  {
+    title: 'Build',
+    subtitle: 'Translate product intent into execution.',
+    items: ['PRDs', 'User stories', 'MVP definition', 'Technical collaboration', 'Architecture trade-offs', 'Cross-functional execution']
+  },
+  {
+    title: 'Measure',
+    subtitle: 'Determine whether the product is actually working.',
+    items: ['Funnel analysis', 'Activation', 'Conversion', 'Retention', 'Product metrics', 'Operational metrics', 'Unit economics']
+  },
+  {
+    title: 'Scale',
+    subtitle: 'Turn validated value into a repeatable business.',
+    items: ['Pricing', 'GTM', 'RevOps', 'Automation', 'Process design', 'Product operations']
+  }
+];
+
+export const productCaseStudies = [
+  {
+    id: 'digikala',
+    company: 'Digikala',
+    title: 'Connecting automation decisions to operational leverage',
+    role: 'Senior Manager, Robotics & Automation',
+    context: [
+      'Digikala operates at large logistics and operational scale. My work involved robotics and automation systems used in environments where reliability, throughput, process constraints, human operations, and cost all interact.',
+      'The important challenge was not simply designing technology. It was deciding where technology could create enough operational leverage to justify the complexity of introducing it.'
+    ],
+    questions: [
+      'Where should automation be introduced?',
+      'Which bottlenecks create the highest operational leverage?',
+      'When does automation improve throughput, reliability, or cost enough to justify CAPEX and added complexity?',
+      'How should technology behave when deployed inside a live operational environment?'
+    ],
+    ownership: ['Robotics & automation strategy', 'Internal product thinking', 'Operational problem framing', 'Technical feasibility', 'System architecture', 'Reliability', 'Cross-functional coordination', 'Process improvement'],
+    lesson: 'Technology is valuable only when it changes the performance of the system around it.'
+  },
+  {
+    id: 'x-robotiics',
+    company: 'X-ROBOTIICS / Acust.ai',
+    title: 'From problem discovery to a real product in the field',
+    role: 'Co-Founder & CIO',
+    context: [
+      'At X-ROBOTIICS, my responsibility expanded across the full product lifecycle. Acust.ai became one of the clearest examples of how my engineering and product work intersect.',
+      'The product addresses workplace noise and environmental intelligence using connected sensing devices and software. My involvement covered product discovery, technical architecture, embedded hardware, backend systems, product packaging, pricing thinking, customer deployment, and commercialization.'
+    ],
+    evidence: ['4 customers', '120 devices installed', 'Largest deployment: 60 devices', 'Device-based SaaS / recurring software model'],
+    journey: [
+      { step: '1. Problem', text: 'Workplace noise and environmental conditions affect employee experience, concentration, HSE, and operational quality, but organizations often lack continuous, location-aware evidence.' },
+      { step: '2. Discovery', text: 'The objective was to understand what organizations actually needed to observe, measure, communicate, and act on, instead of simply building another sensor.' },
+      { step: '3. Value Proposition', text: 'Move from raw sensing toward actionable workplace intelligence.' },
+      { step: '4. Product Architecture', text: 'Combine edge sensing, embedded processing, connectivity, data infrastructure, dashboards, alerts, and recurring software value.' },
+      { step: '5. Commercialization', text: 'The product moved from prototype thinking into real customer deployments and recurring product packaging.' }
+    ],
+    ownership: ['Product discovery', 'Value proposition', 'Technical architecture', 'Embedded product strategy', 'SaaS thinking', 'Pricing', 'Customer deployment', 'GTM', 'RevOps', 'Product iteration'],
+    lesson: 'A technical capability becomes a product only when the customer understands what decision it helps them make.'
+  },
+  {
+    id: 'foundryos',
+    company: 'FoundryOS',
+    title: 'Turning product experience into a structured operating system',
+    context: [
+      'FoundryOS emerged from my work across engineering, product, startups, operations, and my DBA studies in Innovation Management.',
+      'It is not intended to be presented as a generic collection of templates. The idea is to structure product and venture decisions into a repeatable system that helps reduce uncertainty.'
+    ],
+    positioning: 'A structured framework for moving from an ambiguous problem to evidence, product strategy, business model, GTM, and execution.',
+    themes: ['Discovery', 'Customer problems', 'Evidence', 'Opportunity assessment', 'Product strategy', 'Value proposition', 'Business model', 'GTM', 'Execution', 'Decision documentation'],
+    lesson: 'Good product management is not a collection of ceremonies. It is a system for reducing uncertainty and improving decisions.',
+    ctaLabel: 'Explore FoundryOS',
+    ctaRoute: 'open-source'
+  }
+];
+
+export const productPrinciples = [
+  { n: '01', title: 'Start with the problem', text: 'A sophisticated solution to the wrong problem is still the wrong product.' },
+  { n: '02', title: 'Evidence before confidence', text: 'Customer behavior, operational data, experiments, and real constraints are stronger than internal conviction.' },
+  { n: '03', title: 'Engineering is part of product strategy', text: 'Architecture, reliability, technical debt, manufacturability, and deployment constraints shape what a product can become.' },
+  { n: '04', title: 'Optimize the system, not the feature', text: 'A local improvement is not useful if it creates larger downstream complexity.' },
+  { n: '05', title: 'Measure outcomes, not activity', text: 'Shipping features is execution. Creating measurable customer or business value is the objective.' }
+];
+
+export const productIntersectionColumns = [
+  { title: 'Desirability', question: 'Does the problem matter?', items: ['Customer pain', 'Workflow', 'Behavior', 'Adoption', 'Experience'] },
+  { title: 'Feasibility', question: 'Can we build it well?', items: ['Architecture', 'Hardware', 'Software', 'Reliability', 'Integration'] },
+  { title: 'Viability', question: 'Should the business build it?', items: ['Economics', 'Pricing', 'Operations', 'GTM', 'Scale'] }
+];
+
+export const productToolkitGroups = [
+  { title: 'Discovery', items: ['Customer Interviews', 'JTBD', 'Problem Framing', 'Market Research', 'Workflow Analysis'] },
+  { title: 'Product Definition', items: ['PRD', 'User Stories', 'MVP Definition', 'Roadmapping', 'Prioritization', 'Value Proposition'] },
+  { title: 'Analytics', items: ['Product Metrics', 'Funnel Analysis', 'Conversion', 'Activation', 'Retention', 'Operational KPIs'] },
+  { title: 'Business', items: ['Pricing', 'Business Models', 'GTM', 'RevOps', 'Unit Economics', 'Commercial Validation'] },
+  { title: 'Delivery', items: ['Agile', 'Scrum', 'Cross-functional Leadership', 'Technical Planning', 'Architecture Collaboration', 'Product Operations'] }
 ];
