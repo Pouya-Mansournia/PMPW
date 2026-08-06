@@ -32,8 +32,8 @@ export const navItems = [
     path: 'about',
     allLabel: 'Profile',
     children: [
-      { label: 'Achievements', path: 'achievements' },
-      { label: 'Product Journey', path: 'product-journey' }
+      { label: 'Product Journey', path: 'product-journey' },
+      { label: 'Achievements', path: 'achievements' }
     ]
   },
   {
@@ -723,7 +723,7 @@ export const productCaseStudies = [
     id: 'x-robotiics',
     company: 'X-ROBOTIICS / Acust.ai',
     title: 'From problem discovery to a real product in the field',
-    role: 'Co-Founder & CIO',
+    role: 'Co-Founder & CINO',
     context: [
       'At X-ROBOTIICS, my responsibility expanded across the full product lifecycle. Acust.ai became one of the clearest examples of how my engineering and product work intersect.',
       'The product addresses workplace noise and environmental intelligence using connected sensing devices and software. My involvement covered product discovery, technical architecture, embedded hardware, backend systems, product packaging, pricing thinking, customer deployment, and commercialization.'

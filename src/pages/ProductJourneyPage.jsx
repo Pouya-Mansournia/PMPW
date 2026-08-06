@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { motion, useReducedMotion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import {
   journeyStages,
   productProcessSteps,
@@ -12,8 +13,23 @@ import {
 import { navigateTo, routeHref } from '../navigation.js';
 
 export default function ProductJourneyPage() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <div className="product-journey-page">
+      {!prefersReducedMotion && (
+        <div className="pj-page-video" aria-hidden="true">
+          <video
+            src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_105406_16f4600d-7a92-4292-b96e-b19156c7830a.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="auto"
+          />
+          <div className="pj-page-video-overlay" />
+        </div>
+      )}
       <section className="page-section pj-hero">
         <p className="eyebrow">Product Journey</p>
         <p className="pj-role-tag">Technical Entrepreneur & Product Leader</p>
@@ -34,6 +50,148 @@ export default function ProductJourneyPage() {
           My move from Engineering to Product was not a career switch. It was an expansion of ownership.
         </blockquote>
         <p className="pj-supporting-line">From building technology — to owning products — to understanding the business behind them.</p>
+      </section>
+
+      <section className="page-section">
+        <div className="section-title">
+          <p className="eyebrow">Intersection</p>
+          <h2>Where Product and Engineering Meet</h2>
+          <p className="lead">
+            I do not see Product and Engineering as separate worlds. Product defines which problems deserve
+            investment and what outcomes matter. Engineering defines what is feasible, reliable, scalable,
+            maintainable, and economically sensible. My strongest work usually happens where those two perspectives
+            need to be connected.
+          </p>
+        </div>
+
+        <div className="pj-venn-stage">
+          <svg
+            className="pj-venn-svg"
+            viewBox="0 0 400 340"
+            role="img"
+            aria-label="Venn diagram of Engineering feasibility, Business viability, and Customer desirability overlapping at Product, the intersection where I operate"
+          >
+            <defs>
+              <radialGradient id="vennEngFill" cx="35%" cy="30%" r="75%">
+                <stop offset="0%" stopColor="rgba(168,200,255,.60)" />
+                <stop offset="65%" stopColor="rgba(138,180,255,.28)" />
+                <stop offset="100%" stopColor="rgba(138,180,255,.06)" />
+              </radialGradient>
+              <radialGradient id="vennBizFill" cx="65%" cy="30%" r="75%">
+                <stop offset="0%" stopColor="rgba(233,204,150,.60)" />
+                <stop offset="65%" stopColor="rgba(216,181,109,.28)" />
+                <stop offset="100%" stopColor="rgba(216,181,109,.06)" />
+              </radialGradient>
+              <radialGradient id="vennCustFill" cx="50%" cy="65%" r="75%">
+                <stop offset="0%" stopColor="rgba(170,238,205,.60)" />
+                <stop offset="65%" stopColor="rgba(123,224,181,.28)" />
+                <stop offset="100%" stopColor="rgba(123,224,181,.06)" />
+              </radialGradient>
+              <filter id="vennGlass" x="-40%" y="-40%" width="180%" height="180%">
+                <feGaussianBlur stdDeviation="2.5" />
+              </filter>
+            </defs>
+
+            <motion.g
+              initial={prefersReducedMotion ? false : { opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.6 }}
+            >
+              <motion.g
+                style={{ transformOrigin: '150px 150px' }}
+                animate={prefersReducedMotion ? undefined : { scale: [1, 1.04, 0.98, 1] }}
+                transition={prefersReducedMotion ? undefined : { duration: 6.5, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                <motion.ellipse
+                  className="pj-venn-circle pj-venn-eng"
+                  cx="150" cy="150"
+                  fill="url(#vennEngFill)"
+                  filter="url(#vennGlass)"
+                  animate={prefersReducedMotion ? { rx: 100, ry: 100 } : { rx: [100, 112, 94, 104, 100], ry: [100, 92, 108, 97, 100] }}
+                  transition={prefersReducedMotion ? undefined : { duration: 7.5, repeat: Infinity, ease: 'easeInOut' }}
+                />
+                <text x="110" y="90" className="pj-venn-label-title" textAnchor="middle">Engineering</text>
+                <text x="110" y="108" className="pj-venn-label-sub" textAnchor="middle">FEASIBILITY</text>
+              </motion.g>
+            </motion.g>
+
+            <motion.g
+              initial={prefersReducedMotion ? false : { opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.12 }}
+            >
+              <motion.g
+                style={{ transformOrigin: '250px 150px' }}
+                animate={prefersReducedMotion ? undefined : { scale: [1, 0.98, 1.045, 1] }}
+                transition={prefersReducedMotion ? undefined : { duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1.1 }}
+              >
+                <motion.ellipse
+                  className="pj-venn-circle pj-venn-biz"
+                  cx="250" cy="150"
+                  fill="url(#vennBizFill)"
+                  filter="url(#vennGlass)"
+                  animate={prefersReducedMotion ? { rx: 100, ry: 100 } : { rx: [100, 95, 113, 101, 100], ry: [100, 109, 91, 99, 100] }}
+                  transition={prefersReducedMotion ? undefined : { duration: 8.8, repeat: Infinity, ease: 'easeInOut', delay: 1.1 }}
+                />
+                <text x="290" y="90" className="pj-venn-label-title" textAnchor="middle">Business</text>
+                <text x="290" y="108" className="pj-venn-label-sub" textAnchor="middle">VIABILITY</text>
+              </motion.g>
+            </motion.g>
+
+            <motion.g
+              initial={prefersReducedMotion ? false : { opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.6, delay: 0.24 }}
+            >
+              <motion.g
+                style={{ transformOrigin: '200px 236.6px' }}
+                animate={prefersReducedMotion ? undefined : { scale: [1, 1.03, 0.985, 1] }}
+                transition={prefersReducedMotion ? undefined : { duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 2.2 }}
+              >
+                <motion.ellipse
+                  className="pj-venn-circle pj-venn-cust"
+                  cx="200" cy="236.6"
+                  fill="url(#vennCustFill)"
+                  filter="url(#vennGlass)"
+                  animate={prefersReducedMotion ? { rx: 100, ry: 100 } : { rx: [100, 108, 96, 103, 100], ry: [100, 94, 106, 98, 100] }}
+                  transition={prefersReducedMotion ? undefined : { duration: 6.8, repeat: Infinity, ease: 'easeInOut', delay: 2.2 }}
+                />
+                <text x="200" y="298" className="pj-venn-label-title" textAnchor="middle">Customer</text>
+                <text x="200" y="316" className="pj-venn-label-sub" textAnchor="middle">DESIRABILITY</text>
+              </motion.g>
+            </motion.g>
+
+            <motion.g
+              initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.6 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.55, ease: 'easeOut' }}
+              style={{ transformOrigin: '200px 179px' }}
+            >
+              <text x="200" y="175" className="pj-venn-center-title" textAnchor="middle">Product</text>
+              <text x="200" y="191" className="pj-venn-center-sub" textAnchor="middle">WHERE I OPERATE</text>
+            </motion.g>
+          </svg>
+          <p className="pj-venn-caption">
+            A product manager’s job is to connect what engineering can feasibly build to what the business can
+            sustainably support — anchored in what the customer actually needs. That intersection is where I try to work.
+          </p>
+        </div>
+
+        <div className="pj-intersection">
+          {productIntersectionColumns.map((column) => (
+            <div className="pj-intersection-column" key={column.title}>
+              <h3>{column.title}</h3>
+              <p className="pj-timeline-subtitle">{column.question}</p>
+              <ul>
+                {column.items.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="page-section soft-section">
@@ -76,12 +234,32 @@ export default function ProductJourneyPage() {
         <div className="pj-process-flow">
           {productProcessSteps.map((step, index) => (
             <Fragment key={step}>
-              <span className="pj-process-step">
+              <motion.span
+                className="pj-process-step"
+                initial={{ opacity: 0, y: 14 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.45, delay: index * 0.06, ease: 'easeOut' }}
+                whileHover={prefersReducedMotion ? undefined : { y: -3 }}
+              >
                 <span className="pj-process-index">{String(index + 1).padStart(2, '0')}</span>
                 {step}
-              </span>
+              </motion.span>
               {index < productProcessSteps.length - 1 && (
-                <span className="pj-process-arrow" aria-hidden="true"><ArrowRight size={15} /></span>
+                <motion.span
+                  className="pj-process-arrow"
+                  aria-hidden="true"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  animate={prefersReducedMotion ? undefined : { x: [0, 4, 0] }}
+                  transition={{
+                    opacity: { duration: 0.4, delay: index * 0.06 },
+                    x: prefersReducedMotion ? undefined : { duration: 1.4, repeat: Infinity, ease: 'easeInOut', delay: index * 0.08 }
+                  }}
+                >
+                  <ArrowRight size={15} />
+                </motion.span>
               )}
             </Fragment>
           ))}
@@ -185,30 +363,6 @@ export default function ProductJourneyPage() {
         </div>
       </section>
 
-      <section className="page-section soft-section">
-        <div className="section-title">
-          <p className="eyebrow">Intersection</p>
-          <h2>Where Product and Engineering Meet</h2>
-          <p className="lead">
-            I do not see Product and Engineering as separate worlds. Product defines which problems deserve
-            investment and what outcomes matter. Engineering defines what is feasible, reliable, scalable,
-            maintainable, and economically sensible. My strongest work usually happens where those two perspectives
-            need to be connected.
-          </p>
-        </div>
-        <div className="pj-intersection">
-          {productIntersectionColumns.map((column) => (
-            <div className="pj-intersection-column" key={column.title}>
-              <h3>{column.title}</h3>
-              <p className="pj-timeline-subtitle">{column.question}</p>
-              <ul>
-                {column.items.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section className="page-section">
         <div className="section-title">
           <p className="eyebrow">Toolkit</p>
@@ -241,12 +395,6 @@ export default function ProductJourneyPage() {
             I want to continue working on products where technical depth matters — especially products that sit at
             the intersection of hardware, software, AI, robotics, industrial systems, and real-world operations.
           </p>
-        </div>
-        <div className="pj-closing-links">
-          <a href={routeHref('works')} onClick={(event) => navigateTo('works', event)}>Engineering Projects <ArrowUpRight size={16} /></a>
-          <a href={routeHref('publications')} onClick={(event) => navigateTo('publications', event)}>Research <ArrowUpRight size={16} /></a>
-          <a href={routeHref('open-source')} onClick={(event) => navigateTo('open-source', event)}>Open Source <ArrowUpRight size={16} /></a>
-          <a href={routeHref('contact')} onClick={(event) => navigateTo('contact', event)}>Contact <ArrowUpRight size={16} /></a>
         </div>
       </section>
     </div>
