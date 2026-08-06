@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import {
@@ -14,6 +14,17 @@ import { navigateTo, routeHref } from '../navigation.js';
 
 export default function ProductJourneyPage() {
   const prefersReducedMotion = useReducedMotion();
+  const [isCompactDevice, setIsCompactDevice] = useState(false);
+
+  useEffect(() => {
+    const mql = window.matchMedia('(max-width: 900px)');
+    const update = () => setIsCompactDevice(mql.matches);
+    update();
+    mql.addEventListener('change', update);
+    return () => mql.removeEventListener('change', update);
+  }, []);
+
+  const vennLite = prefersReducedMotion || isCompactDevice;
 
   return (
     <div className="product-journey-page">
@@ -87,29 +98,31 @@ export default function ProductJourneyPage() {
                 <stop offset="65%" stopColor="rgba(123,224,181,.28)" />
                 <stop offset="100%" stopColor="rgba(123,224,181,.06)" />
               </radialGradient>
-              <filter id="vennGlass" x="-40%" y="-40%" width="180%" height="180%">
-                <feGaussianBlur stdDeviation="2.5" />
-              </filter>
+              {!vennLite && (
+                <filter id="vennGlass" x="-40%" y="-40%" width="180%" height="180%">
+                  <feGaussianBlur stdDeviation="2.5" />
+                </filter>
+              )}
             </defs>
 
             <motion.g
               initial={prefersReducedMotion ? false : { opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.6 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5 }}
             >
               <motion.g
                 style={{ transformOrigin: '150px 150px' }}
-                animate={prefersReducedMotion ? undefined : { scale: [1, 1.04, 0.98, 1] }}
-                transition={prefersReducedMotion ? undefined : { duration: 6.5, repeat: Infinity, ease: 'easeInOut' }}
+                animate={vennLite ? undefined : { scale: [1, 1.04, 0.98, 1] }}
+                transition={vennLite ? undefined : { duration: 6.5, repeat: Infinity, ease: 'easeInOut' }}
               >
                 <motion.ellipse
                   className="pj-venn-circle pj-venn-eng"
                   cx="150" cy="150"
                   fill="url(#vennEngFill)"
-                  filter="url(#vennGlass)"
-                  animate={prefersReducedMotion ? { rx: 100, ry: 100 } : { rx: [100, 112, 94, 104, 100], ry: [100, 92, 108, 97, 100] }}
-                  transition={prefersReducedMotion ? undefined : { duration: 7.5, repeat: Infinity, ease: 'easeInOut' }}
+                  filter={vennLite ? undefined : 'url(#vennGlass)'}
+                  animate={vennLite ? { rx: 100, ry: 100 } : { rx: [100, 112, 94, 104, 100], ry: [100, 92, 108, 97, 100] }}
+                  transition={vennLite ? undefined : { duration: 7.5, repeat: Infinity, ease: 'easeInOut' }}
                 />
                 <text x="110" y="90" className="pj-venn-label-title" textAnchor="middle">Engineering</text>
                 <text x="110" y="108" className="pj-venn-label-sub" textAnchor="middle">FEASIBILITY</text>
@@ -119,21 +132,21 @@ export default function ProductJourneyPage() {
             <motion.g
               initial={prefersReducedMotion ? false : { opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.6, delay: 0.12 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
             >
               <motion.g
                 style={{ transformOrigin: '250px 150px' }}
-                animate={prefersReducedMotion ? undefined : { scale: [1, 0.98, 1.045, 1] }}
-                transition={prefersReducedMotion ? undefined : { duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1.1 }}
+                animate={vennLite ? undefined : { scale: [1, 0.98, 1.045, 1] }}
+                transition={vennLite ? undefined : { duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1.1 }}
               >
                 <motion.ellipse
                   className="pj-venn-circle pj-venn-biz"
                   cx="250" cy="150"
                   fill="url(#vennBizFill)"
-                  filter="url(#vennGlass)"
-                  animate={prefersReducedMotion ? { rx: 100, ry: 100 } : { rx: [100, 95, 113, 101, 100], ry: [100, 109, 91, 99, 100] }}
-                  transition={prefersReducedMotion ? undefined : { duration: 8.8, repeat: Infinity, ease: 'easeInOut', delay: 1.1 }}
+                  filter={vennLite ? undefined : 'url(#vennGlass)'}
+                  animate={vennLite ? { rx: 100, ry: 100 } : { rx: [100, 95, 113, 101, 100], ry: [100, 109, 91, 99, 100] }}
+                  transition={vennLite ? undefined : { duration: 8.8, repeat: Infinity, ease: 'easeInOut', delay: 1.1 }}
                 />
                 <text x="290" y="90" className="pj-venn-label-title" textAnchor="middle">Business</text>
                 <text x="290" y="108" className="pj-venn-label-sub" textAnchor="middle">VIABILITY</text>
@@ -143,21 +156,21 @@ export default function ProductJourneyPage() {
             <motion.g
               initial={prefersReducedMotion ? false : { opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.6, delay: 0.24 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
               <motion.g
                 style={{ transformOrigin: '200px 236.6px' }}
-                animate={prefersReducedMotion ? undefined : { scale: [1, 1.03, 0.985, 1] }}
-                transition={prefersReducedMotion ? undefined : { duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 2.2 }}
+                animate={vennLite ? undefined : { scale: [1, 1.03, 0.985, 1] }}
+                transition={vennLite ? undefined : { duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 2.2 }}
               >
                 <motion.ellipse
                   className="pj-venn-circle pj-venn-cust"
                   cx="200" cy="236.6"
                   fill="url(#vennCustFill)"
-                  filter="url(#vennGlass)"
-                  animate={prefersReducedMotion ? { rx: 100, ry: 100 } : { rx: [100, 108, 96, 103, 100], ry: [100, 94, 106, 98, 100] }}
-                  transition={prefersReducedMotion ? undefined : { duration: 6.8, repeat: Infinity, ease: 'easeInOut', delay: 2.2 }}
+                  filter={vennLite ? undefined : 'url(#vennGlass)'}
+                  animate={vennLite ? { rx: 100, ry: 100 } : { rx: [100, 108, 96, 103, 100], ry: [100, 94, 106, 98, 100] }}
+                  transition={vennLite ? undefined : { duration: 6.8, repeat: Infinity, ease: 'easeInOut', delay: 2.2 }}
                 />
                 <text x="200" y="298" className="pj-venn-label-title" textAnchor="middle">Customer</text>
                 <text x="200" y="316" className="pj-venn-label-sub" textAnchor="middle">DESIRABILITY</text>
@@ -167,8 +180,8 @@ export default function ProductJourneyPage() {
             <motion.g
               initial={prefersReducedMotion ? false : { opacity: 0, scale: 0.6 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.5 }}
-              transition={{ duration: 0.5, delay: 0.55, ease: 'easeOut' }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.4, delay: 0.35, ease: 'easeOut' }}
               style={{ transformOrigin: '200px 179px' }}
             >
               <text x="200" y="175" className="pj-venn-center-title" textAnchor="middle">Product</text>
