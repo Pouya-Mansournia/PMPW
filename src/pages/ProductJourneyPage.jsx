@@ -14,7 +14,8 @@ import { navigateTo, routeHref } from '../navigation.js';
 
 export default function ProductJourneyPage() {
   const prefersReducedMotion = useReducedMotion();
-  const [isCompactDevice, setIsCompactDevice] = useState(false);
+  const [isCompactDevice, setIsCompactDevice] = useState(true);
+  const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
     const mql = window.matchMedia('(max-width: 900px)');
@@ -24,23 +25,31 @@ export default function ProductJourneyPage() {
     return () => mql.removeEventListener('change', update);
   }, []);
 
+  useEffect(() => {
+    if (!prefersReducedMotion && !isCompactDevice) {
+      setShowVideo(true);
+    } else {
+      setShowVideo(false);
+    }
+  }, [prefersReducedMotion, isCompactDevice]);
+
   const vennLite = prefersReducedMotion || isCompactDevice;
 
   return (
     <div className="product-journey-page">
-      {!prefersReducedMotion && (
-        <div className="pj-page-video" aria-hidden="true">
+      <div className="pj-page-video" aria-hidden="true">
+        {showVideo && (
           <video
             src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_105406_16f4600d-7a92-4292-b96e-b19156c7830a.mp4"
             autoPlay
             loop
             muted
             playsInline
-            preload="auto"
+            preload="none"
           />
-          <div className="pj-page-video-overlay" />
-        </div>
-      )}
+        )}
+        <div className="pj-page-video-overlay" />
+      </div>
       <section className="page-section pj-hero">
         <p className="eyebrow">Product Journey</p>
         <p className="pj-role-tag">Technical Entrepreneur & Product Leader</p>
