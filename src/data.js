@@ -104,6 +104,16 @@ export const openSourceSystems = [
     themes: ['CAD models', 'Mechanical design', 'Robotics components', 'Automation hardware', 'Design references', 'Engineering sharing'],
     github: 'https://grabcad.com/pouya.mansournia-1',
     primaryLabel: 'View GrabCAD'
+  },
+  {
+    id: 'warehouse-amr-ros2',
+    title: 'Warehouse AMR ROS2',
+    category: 'Autonomous Mobile Robot Stack',
+    icon: Bot,
+    description: 'An open-source ROS 2 stack for a warehouse autonomous mobile robot, covering navigation, mapping and task execution for warehouse automation scenarios.',
+    themes: ['ROS 2', 'AMR Navigation', 'Warehouse Automation', 'Mapping & Localization', 'Task Execution', 'Fleet Robotics'],
+    github: 'https://github.com/Pouya-Mansournia/warehouse-amr-ros2',
+    documentation: 'https://github.com/Pouya-Mansournia/warehouse-amr-ros2#readme'
   }
 ];
 
@@ -537,6 +547,15 @@ export const achievements = [
 ];
 
 export const publications = [
+  {
+    icon: BookOpen,
+    title: 'ROS 2: Zero to Robot',
+    venue: 'Online robotics book',
+    year: '2026',
+    href: 'https://pouya-mansournia.github.io/ros2-zero-to-robot/',
+    text: 'Open online book taking readers from ROS 2 fundamentals to building a working robot, published as a dedicated GitHub Pages resource.',
+    highlights: ['ROS 2', 'Online Book', 'Robotics Education', 'GitHub Pages']
+  },
   {
     icon: BookOpen,
     title: 'Advanced Mobile Robotics Book',
