@@ -1,25 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://mansournia.info/</loc><lastmod>2026-07-05</lastmod></url>
+  <url><loc>https://mansournia.info/</loc><lastmod>2026-08-10</lastmod></url>
   <url><loc>https://mansournia.info/about/</loc><lastmod>2026-08-06</lastmod></url>
   <url><loc>https://mansournia.info/product-journey/</loc><lastmod>2026-08-06</lastmod></url>
-  <url><loc>https://mansournia.info/projects/</loc><lastmod>2026-07-05</lastmod></url>
-  <url><loc>https://mansournia.info/projects/robotics-platforms/</loc><lastmod>2026-07-05</lastmod></url>
-  <url><loc>https://mansournia.info/projects/robotic-manipulators-end-effectors/</loc><lastmod>2026-07-05</lastmod></url>
-  <url><loc>https://mansournia.info/projects/wheeled-mobile-robot-platforms/</loc><lastmod>2026-07-05</lastmod></url>
-  <url><loc>https://mansournia.info/projects/uav-systems/</loc><lastmod>2026-07-05</lastmod></url>
-  <url><loc>https://mansournia.info/projects/piezo-fast-steering-mirror/</loc><lastmod>2026-07-05</lastmod></url>
-  <url><loc>https://mansournia.info/projects/industrial-conveyor-material-handling/</loc><lastmod>2026-07-05</lastmod></url>
-  <url><loc>https://mansournia.info/projects/embedded-electronics-pcb-design/</loc><lastmod>2026-07-05</lastmod></url>
-  <url><loc>https://mansournia.info/projects/industrial-machinery-manufacturing/</loc><lastmod>2026-07-05</lastmod></url>
-  <url><loc>https://mansournia.info/projects/engineering-components-prototypes/</loc><lastmod>2026-07-05</lastmod></url>
+  <url><loc>https://mansournia.info/work/</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://mansournia.info/work/robotics-platforms/</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://mansournia.info/work/robotic-manipulators-end-effectors/</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://mansournia.info/work/wheeled-mobile-robot-platforms/</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://mansournia.info/work/uav-systems/</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://mansournia.info/work/piezo-fast-steering-mirror/</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://mansournia.info/work/industrial-conveyor-material-handling/</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://mansournia.info/work/embedded-electronics-pcb-design/</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://mansournia.info/work/industrial-machinery-manufacturing/</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://mansournia.info/work/engineering-components-prototypes/</loc><lastmod>2026-08-10</lastmod></url>
   <url><loc>https://mansournia.info/research/</loc><lastmod>2026-07-05</lastmod></url>
   <url><loc>https://mansournia.info/articles/</loc><lastmod>2026-07-05</lastmod></url>
   <url><loc>https://mansournia.info/articles/high-speed-wheel-sortation-system/</loc><lastmod>2026-07-05</lastmod></url>
   <url><loc>https://mansournia.info/articles/put-to-light-pick-to-light-warehouse-system/</loc><lastmod>2026-07-05</lastmod></url>
   <url><loc>https://mansournia.info/articles/dimension-weight-scanning-point-cloud-detection/</loc><lastmod>2026-07-05</lastmod></url>
   <url><loc>https://mansournia.info/articles/industrial-iot-monitoring-platform/</loc><lastmod>2026-07-05</lastmod></url>
-  <url><loc>https://mansournia.info/open-source/</loc><lastmod>2026-07-05</lastmod></url>
+  <url><loc>https://mansournia.info/writing/</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://mansournia.info/writing/from-pain-to-product/</loc><lastmod>2026-08-10</lastmod></url>
+  <url><loc>https://mansournia.info/open-source/</loc><lastmod>2026-08-10</lastmod></url>
   <url><loc>https://mansournia.info/achievements/</loc><lastmod>2026-07-05</lastmod></url>
   <url><loc>https://mansournia.info/contact/</loc><lastmod>2026-07-05</lastmod></url>
 </urlset>

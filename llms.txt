@@ -2,18 +2,23 @@
 
 > Experimental navigation aid for language-model tools. This file is not required by Google and does not guarantee ranking, indexing, AI Overview inclusion, or citation.
 
-Pouya Mansournia is a robotics systems architect and mechatronics engineer working across autonomous mobile robots, warehouse automation, embedded systems, precision mechanisms, product development, AI integration, and industrial automation.
+Pouya Mansournia is a robotics systems architect, mechatronics engineer, and founder working across autonomous mobile robots, warehouse automation, embedded systems, precision mechanisms, product management, innovation, AI-assisted product development, and industrial automation. His work connects engineering, robotics, product, and founder-led execution as one system rather than separate disciplines.
 
 ## Canonical pages
 
 - Home: https://mansournia.info/
-- About: https://mansournia.info/about/
-- Projects: https://mansournia.info/projects/
-- Research and publications: https://mansournia.info/research/
+- About (My Story, Experience, Education, Product Journey): https://mansournia.info/about/
+- Product Journey: https://mansournia.info/product-journey/
+- Work (engineering, robotics, and product case studies): https://mansournia.info/work/
+- Research (publications and engineering notes): https://mansournia.info/research/
 - Engineering articles: https://mansournia.info/articles/
+- Writing (long-form essays and case studies): https://mansournia.info/writing/
+- Featured essay, From Pain to Product: One Year Building Acust.ai Across Engineering, Product, and AI: https://mansournia.info/writing/from-pain-to-product/
 - Open-source systems: https://mansournia.info/open-source/
 - Achievements: https://mansournia.info/achievements/
 - Contact: https://mansournia.info/contact/
+
+Note: `/projects/` and its subpaths are legacy URLs that redirect to the equivalent `/work/` pages.
 
 ## Verified public profiles listed on the website
 
@@ -26,7 +31,10 @@ Pouya Mansournia is a robotics systems architect and mechatronics engineer worki
 
 ## Open-source resources
 
-- Foundry OS: https://github.com/Pouya-Mansournia/FoundryOS
-- REOS: https://github.com/Pouya-Mansournia/REOS
-- ARCHON OS: https://github.com/Pouya-Mansournia/ARCHON
+- FoundryOS (product & startup execution operating system): https://github.com/Pouya-Mansournia/FoundryOS
+- REOS (robotics engineering operating system): https://github.com/Pouya-Mansournia/REOS
+- ARCHON (AI-agentic architecture & decision operating system): https://github.com/Pouya-Mansournia/ARCHON
+- Warehouse AMR ROS2: https://github.com/Pouya-Mansournia/warehouse-amr-ros2
+- ROS 2: Zero to Robot: https://github.com/Pouya-Mansournia/ros2-zero-to-robot
+- Delivery Robot ROS: https://github.com/Pouya-Mansournia/Delivery-Robot-ROS
 - GrabCAD engineering library: https://grabcad.com/pouya.mansournia-1
