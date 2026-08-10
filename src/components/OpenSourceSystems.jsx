@@ -37,9 +37,11 @@ function SystemCard({ system, compact = false }) {
 }
 
 export function OpenSourceSystemsGrid({ compact = false }) {
+  const systems = compact ? openSourceSystems.filter((system) => system.id !== 'grabcad-library') : openSourceSystems;
+
   return (
     <div className={`open-source-grid ${compact ? 'compact' : ''}`}>
-      {openSourceSystems.map((system) => (
+      {systems.map((system) => (
         <SystemCard key={system.id} system={system} compact={compact} />
       ))}
     </div>

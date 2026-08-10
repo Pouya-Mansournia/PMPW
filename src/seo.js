@@ -1,4 +1,5 @@
 import { blogPosts, openSourceSystems, works } from './data.js';
+import { writingArticles } from './data/writing.js';
 import { ROUTE_PATHS, routeHref } from './navigation.js';
 
 export const SITE_URL = 'https://mansournia.info';
@@ -6,17 +7,17 @@ export const PERSON_ID = `${SITE_URL}/#person`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const DEFAULT_SOCIAL_IMAGE = `${SITE_URL}/portfolio-images/Last-Mile%20Autonomous%20Delivery%20Robot%20Prototype.jpg`;
 
-const defaultDescription = 'Pouya Mansournia is a robotics systems architect and mechatronics engineer working across autonomous mobile robots, warehouse automation, embedded systems, precision mechanisms, and AI-integrated products.';
+const defaultDescription = 'Pouya Mansournia is a robotics systems architect, mechatronics engineer, and founder working across autonomous mobile robots, warehouse automation, embedded systems, precision mechanisms, product management, innovation, and AI-assisted product development.';
 
 const pageSeo = {
   home: {
-    title: 'Pouya Mansournia | Robotics Systems Architect & Mechatronics Engineer',
+    title: 'Pouya Mansournia | Robotics Systems Architect, Mechatronics Engineer & Founder',
     description: defaultDescription,
     type: 'website'
   },
   about: {
-    title: 'About Pouya Mansournia | Robotics Systems Architect',
-    description: 'About Pouya Mansournia, a robotics systems architect and mechatronics engineer whose work spans autonomous robots, warehouse automation, embedded systems, precision motion, and product development.',
+    title: 'About Pouya Mansournia | Engineering, Product & Founder Journey',
+    description: 'About Pouya Mansournia, a robotics systems architect and mechatronics engineer whose work expanded into product management, innovation, and founder-led ventures, spanning autonomous robots, warehouse automation, embedded systems, precision motion, and product development.',
     image: `${SITE_URL}/portfolio-images/Profile%20Photo.jpg`,
     type: 'profile'
   },
@@ -27,8 +28,13 @@ const pageSeo = {
     type: 'website'
   },
   works: {
-    title: 'Robotics and Automation Projects | Pouya Mansournia',
-    description: 'Explore Pouya Mansournia’s projects across mobile robotics, manipulators, UAV systems, precision positioning, warehouse automation, embedded electronics, and industrial machinery.',
+    title: 'Work | Pouya Mansournia: Engineering, Robotics & Product',
+    description: 'Pouya Mansournia’s work across mobile robotics, manipulators, UAV systems, precision positioning, warehouse automation, embedded electronics, industrial machinery, and product/founder execution.',
+    type: 'website'
+  },
+  writing: {
+    title: 'Writing | Pouya Mansournia',
+    description: 'Long-form essays and case studies by Pouya Mansournia on engineering, product, innovation, AI, research, and building real systems.',
     type: 'website'
   },
   publications: {
@@ -71,6 +77,10 @@ const detailEntries = [
 
 const detailByRoute = Object.fromEntries(detailEntries);
 
+const articleByRoute = Object.fromEntries(
+  writingArticles.map((article) => [article.id, article])
+);
+
 function absoluteImage(fileName) {
   return fileName
     ? `${SITE_URL}/portfolio-images/${encodeURIComponent(fileName)}`
@@ -82,6 +92,19 @@ export function absoluteUrl(route) {
 }
 
 export function getSeo(route) {
+  const article = articleByRoute[route];
+  if (article) {
+    return {
+      title: `${article.title} | Pouya Mansournia`,
+      description: article.deck,
+      image: article.heroImage ? `${SITE_URL}${article.heroImage}` : DEFAULT_SOCIAL_IMAGE,
+      imageAlt: article.heroImageAlt || article.title,
+      robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
+      type: 'article',
+      url: absoluteUrl(route)
+    };
+  }
+
   const detail = detailByRoute[route];
   if (detail) {
     const { item, type } = detail;
@@ -117,7 +140,7 @@ function personEntity() {
     url: `${SITE_URL}/`,
     image: `${SITE_URL}/portfolio-images/Profile%20Photo.jpg`,
     description: defaultDescription,
-    jobTitle: ['Robotics Systems Architect', 'Mechatronics Engineer'],
+    jobTitle: ['Robotics Systems Architect', 'Mechatronics Engineer', 'Founder & Product Leader'],
     knowsAbout: [
       'Robotics systems architecture',
       'Autonomous mobile robots',
@@ -125,8 +148,11 @@ function personEntity() {
       'Embedded systems',
       'Precision mechatronics',
       'Mechanical design',
+      'Product management',
       'Product development',
-      'AI integration',
+      'Innovation management',
+      'AI-assisted product development',
+      'Founder and startup execution',
       'Industrial automation'
     ],
     sameAs: [
@@ -175,7 +201,7 @@ export function getStructuredData(route) {
         '@type': 'WebSite',
         '@id': WEBSITE_ID,
         url: `${SITE_URL}/`,
-        name: 'Pouya Mansournia — Robotics Systems Architect',
+        name: 'Pouya Mansournia, Robotics Systems Architect',
         description: seo.description,
         inLanguage: 'en',
         author: { '@id': PERSON_ID }
@@ -192,6 +218,31 @@ export function getStructuredData(route) {
       },
       personEntity(),
       breadcrumb(route, 'About Pouya Mansournia')
+    );
+  } else if (articleByRoute[route]) {
+    const article = articleByRoute[route];
+    const articleId = `${absoluteUrl(route)}#article`;
+    graph.push(
+      {
+        ...webPage(route, seo.title, seo.description),
+        mainEntity: { '@id': articleId },
+        breadcrumb: { '@id': `${absoluteUrl(route)}#breadcrumb` }
+      },
+      {
+        '@type': 'Article',
+        '@id': articleId,
+        url: absoluteUrl(route),
+        headline: article.title,
+        description: article.deck,
+        image: seo.image,
+        datePublished: article.publishDate,
+        dateModified: article.publishDate,
+        author: { '@id': PERSON_ID },
+        publisher: { '@id': PERSON_ID },
+        keywords: article.keywords,
+        isPartOf: { '@id': `${absoluteUrl('writing')}#webpage` }
+      },
+      breadcrumb(route, article.title, 'writing')
     );
   } else if (detailByRoute[route]) {
     const { item, parent } = detailByRoute[route];

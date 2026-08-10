@@ -1,15 +1,20 @@
 import { Image } from 'lucide-react';
 import { OpenSourceTeaser } from '../components/OpenSourceSystems.jsx';
-import { works } from '../data.js';
+import { works, productCaseStudies } from '../data.js';
 import { navigateTo, routeHref } from '../navigation.js';
 
 export default function WorksPage() {
   return (
     <section id="works" className="page-section">
       <div className="section-title wide">
-        <p className="eyebrow">Projects</p>
-        <h1 className="semantic-page-title">Selected engineering projects and system categories.</h1>
-        <p>A structured view of robotics, automation, precision motion, embedded electronics, and industrial machinery work.</p>
+        <p className="eyebrow">Work</p>
+        <h1 className="semantic-page-title">Engineering, robotics, and product work, from concept to deployment.</h1>
+        <p>A structured view of what I've built: robotics and automation systems, precision mechanisms, embedded electronics, and the product and founder work built on top of that engineering foundation.</p>
+      </div>
+
+      <div className="section-title">
+        <p className="eyebrow">Engineering &amp; Robotics</p>
+        <h2>Robotics platforms, automation, precision motion, and industrial systems.</h2>
       </div>
       <div className="work-grid">
         {works.map(({ id, title, text, tags, cover }) => (
@@ -31,6 +36,27 @@ export default function WorksPage() {
           </article>
         ))}
       </div>
+
+      <div className="section-title" style={{ marginTop: 56 }}>
+        <p className="eyebrow">Product &amp; Innovation</p>
+        <h2>Turning engineering execution into products, ventures, and operating systems.</h2>
+      </div>
+      <div className="work-grid">
+        {productCaseStudies.map(({ id, company, title, positioning, context, lesson, ctaLabel, ctaRoute }) => (
+          <article className="work-card" key={id}>
+            <div className="work-body">
+              {company && <p className="eyebrow" style={{ marginBottom: 4 }}>{company}</p>}
+              <h3>{title}</h3>
+              <p>{positioning || context?.[0]}</p>
+              {lesson && <p style={{ color: 'var(--muted)', fontSize: 14 }}>{lesson}</p>}
+              <a className="text-link" href={routeHref(ctaRoute || 'product-journey')} onClick={(event) => navigateTo(ctaRoute || 'product-journey', event)}>
+                {ctaLabel || `Read the ${title} story`}
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+
       <OpenSourceTeaser variant="projects" />
     </section>
   );

@@ -5,7 +5,7 @@ import { pathToFileURL } from 'node:url';
 const root = process.cwd();
 const distDir = path.join(root, 'dist');
 const ssrEntry = path.join(root, '.ssr', 'entry-server.js');
-const { getRoutes, renderRoute } = await import(pathToFileURL(ssrEntry).href);
+const { getRoutes, renderRoute, getLegacyRedirects } = await import(pathToFileURL(ssrEntry).href);
 const template = await fs.readFile(path.join(distDir, 'index.html'), 'utf8');
 const localOnlyPublicArtifacts = [
   'portfolio-images/README.md',
@@ -57,6 +57,20 @@ for (const route of getRoutes()) {
     : path.join(distDir, routePath.slice(1), 'index.html');
   await fs.mkdir(path.dirname(output), { recursive: true });
   await fs.writeFile(output, buildDocument(route), 'utf8');
+}
+
+const SITE_URL = 'https://mansournia.info';
+
+function redirectDocument(newPath) {
+  const absoluteUrl = `${SITE_URL}${newPath}`;
+  const url = escapeAttribute(absoluteUrl);
+  return `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="refresh" content="0; url=${url}"><link rel="canonical" href="${url}"><meta name="robots" content="noindex, follow"><title>Redirecting…</title><script>location.replace(${JSON.stringify(newPath)});</script></head><body>This page has moved to <a href="${url}">${url}</a>.</body></html>`;
+}
+
+for (const { oldPath, newPath } of getLegacyRedirects()) {
+  const output = path.join(distDir, oldPath.slice(1), 'index.html');
+  await fs.mkdir(path.dirname(output), { recursive: true });
+  await fs.writeFile(output, redirectDocument(newPath), 'utf8');
 }
 
 const notFound = buildDocument('home')

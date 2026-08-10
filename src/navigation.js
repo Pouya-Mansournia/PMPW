@@ -4,7 +4,9 @@ export const ROUTE_PATHS = {
   'product-journey': '/product-journey/',
   publications: '/research/',
   blog: '/articles/',
-  works: '/projects/',
+  works: '/work/',
+  writing: '/writing/',
+  'writing-from-pain-to-product': '/writing/from-pain-to-product/',
   'open-source': '/open-source/',
   achievements: '/achievements/',
   contact: '/contact/',
@@ -12,15 +14,29 @@ export const ROUTE_PATHS = {
   'blog-put-to-light': '/articles/put-to-light-pick-to-light-warehouse-system/',
   'blog-dimension-detection': '/articles/dimension-weight-scanning-point-cloud-detection/',
   'blog-iot': '/articles/industrial-iot-monitoring-platform/',
-  'work-robotics': '/projects/robotics-platforms/',
-  'work-manipulator': '/projects/robotic-manipulators-end-effectors/',
-  'work-wheels-robot': '/projects/wheeled-mobile-robot-platforms/',
-  'work-uav': '/projects/uav-systems/',
-  'work-precision-positioning': '/projects/piezo-fast-steering-mirror/',
-  'work-material-handling': '/projects/industrial-conveyor-material-handling/',
-  'work-electronics-design': '/projects/embedded-electronics-pcb-design/',
-  'work-machinery': '/projects/industrial-machinery-manufacturing/',
-  'work-other-projects': '/projects/engineering-components-prototypes/'
+  'work-robotics': '/work/robotics-platforms/',
+  'work-manipulator': '/work/robotic-manipulators-end-effectors/',
+  'work-wheels-robot': '/work/wheeled-mobile-robot-platforms/',
+  'work-uav': '/work/uav-systems/',
+  'work-precision-positioning': '/work/piezo-fast-steering-mirror/',
+  'work-material-handling': '/work/industrial-conveyor-material-handling/',
+  'work-electronics-design': '/work/embedded-electronics-pcb-design/',
+  'work-machinery': '/work/industrial-machinery-manufacturing/',
+  'work-other-projects': '/work/engineering-components-prototypes/'
+};
+
+// Legacy URLs that must keep resolving (SEO/inbound links): redirected to their new home.
+export const LEGACY_REDIRECTS = {
+  '/projects/': 'works',
+  '/projects/robotics-platforms/': 'work-robotics',
+  '/projects/robotic-manipulators-end-effectors/': 'work-manipulator',
+  '/projects/wheeled-mobile-robot-platforms/': 'work-wheels-robot',
+  '/projects/uav-systems/': 'work-uav',
+  '/projects/piezo-fast-steering-mirror/': 'work-precision-positioning',
+  '/projects/industrial-conveyor-material-handling/': 'work-material-handling',
+  '/projects/embedded-electronics-pcb-design/': 'work-electronics-design',
+  '/projects/industrial-machinery-manufacturing/': 'work-machinery',
+  '/projects/engineering-components-prototypes/': 'work-other-projects'
 };
 
 const PATH_ROUTES = Object.fromEntries(
@@ -41,6 +57,10 @@ export function routeFromPath(pathname) {
   return PATH_ROUTES[normalizePath(pathname)] || null;
 }
 
+export function legacyRedirectRoute(pathname) {
+  return LEGACY_REDIRECTS[normalizePath(pathname)] || null;
+}
+
 export function routeFromBrowserLocation() {
   if (typeof window === 'undefined') return 'home';
 
@@ -50,7 +70,16 @@ export function routeFromBrowserLocation() {
     return legacyRoute;
   }
 
-  return routeFromPath(window.location.pathname) || 'not-found';
+  const directRoute = routeFromPath(window.location.pathname);
+  if (directRoute) return directRoute;
+
+  const redirectRoute = legacyRedirectRoute(window.location.pathname);
+  if (redirectRoute) {
+    window.history.replaceState({}, '', routeHref(redirectRoute));
+    return redirectRoute;
+  }
+
+  return 'not-found';
 }
 
 export function navigateTo(route, event) {

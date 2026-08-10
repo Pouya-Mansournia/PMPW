@@ -30,16 +30,16 @@ export const navItems = [
   {
     label: 'About',
     path: 'about',
-    allLabel: 'Profile',
+    allLabel: 'My Story',
     children: [
       { label: 'Product Journey', path: 'product-journey' },
       { label: 'Achievements', path: 'achievements' }
     ]
   },
   {
-    label: 'Projects',
+    label: 'Work',
     path: 'works',
-    allLabel: 'Project Overview',
+    allLabel: 'Work Overview',
     children: [
       { label: 'Robotics Platforms', path: 'work-robotics' },
       { label: 'Manipulators', path: 'work-manipulator' },
@@ -60,6 +60,7 @@ export const navItems = [
       { label: 'Engineering Notes', path: 'blog' }
     ]
   },
+  { label: 'Writing', path: 'writing' },
   { label: 'Open Source', path: 'open-source' },
   { label: 'Contact', path: 'contact' }
 ];
@@ -67,7 +68,7 @@ export const navItems = [
 export const openSourceSystems = [
   {
     id: 'foundry-os',
-    title: 'Foundry OS',
+    title: 'FoundryOS',
     category: 'Product & Startup Execution OS',
     icon: GitBranch,
     description: 'An open-source operating framework for turning ideas into structured execution across product strategy, GTM, business models, team structure, and founder-level decisions.',
@@ -87,7 +88,7 @@ export const openSourceSystems = [
   },
   {
     id: 'archon-os',
-    title: 'ARCHON OS',
+    title: 'ARCHON',
     category: 'AI Agentic Architecture & Decision OS',
     icon: Layers3,
     description: 'A decision and architecture operating system for technical founders, engineers, and AI-agent workflows before code is written.',
@@ -114,10 +115,30 @@ export const openSourceSystems = [
     themes: ['ROS 2', 'AMR Navigation', 'Warehouse Automation', 'Mapping & Localization', 'Task Execution', 'Fleet Robotics'],
     github: 'https://github.com/Pouya-Mansournia/warehouse-amr-ros2',
     documentation: 'https://github.com/Pouya-Mansournia/warehouse-amr-ros2#readme'
+  },
+  {
+    id: 'ros2-zero-to-robot',
+    title: 'ROS 2: Zero to Robot',
+    category: 'Open Robotics Education',
+    icon: BookOpen,
+    description: 'An open-source ROS 2 educational resource that takes readers from ROS 2 fundamentals to building a working robot, step by step.',
+    themes: ['ROS 2', 'Robotics Education', 'Beginner to Robot', 'Open Source Curriculum'],
+    github: 'https://github.com/Pouya-Mansournia/ros2-zero-to-robot',
+    documentation: 'https://github.com/Pouya-Mansournia/ros2-zero-to-robot#readme'
+  },
+  {
+    id: 'delivery-robot-ros',
+    title: 'Delivery Robot ROS',
+    category: 'Autonomous Delivery Robot Stack',
+    icon: Bot,
+    description: 'An open-source ROS-based stack for an autonomous delivery robot, covering navigation, perception, and task execution for last-mile delivery scenarios.',
+    themes: ['ROS', 'Delivery Robotics', 'Autonomous Navigation', 'Mobile Robots'],
+    github: 'https://github.com/Pouya-Mansournia/Delivery-Robot-ROS',
+    documentation: 'https://github.com/Pouya-Mansournia/Delivery-Robot-ROS#readme'
   }
 ];
 
-// Home gallery — rich cards with description and highlight chips.
+// Home gallery: rich cards with description and highlight chips.
 export const portfolioImages = [
   {
     title: 'Last-Mile Autonomous Delivery Robot Prototype',
@@ -302,7 +323,7 @@ export const works = [
     id: 'work-robotics',
     title: 'Robotics Platforms',
     icon: Bot,
-    cover: imageSlot('MRL Middle-Size Rescue Robot Platform', 'AtisBot MRL@WORK Competition Robot.png', 'MRL@WORK competition robot platform — robotics portfolio'),
+    cover: imageSlot('MRL Middle-Size Rescue Robot Platform', 'AtisBot MRL@WORK Competition Robot.png', 'MRL@WORK competition robot platform: robotics portfolio'),
     images: [
       imageSlot('Last-Mile Autonomous Delivery Robot Prototype', 'Last-Mile Autonomous Delivery Robot Prototype.jpg', 'Last-mile autonomous delivery robot with six-wheel platform'),
       imageSlot('Autonomous Mobile Robot (AMR) Platform', 'Autonomous Mobile Robot (AMR) Platform.jpg', 'Autonomous mobile robot AMR platform for industrial applications'),
@@ -477,7 +498,7 @@ export const works = [
     id: 'work-machinery',
     title: 'Industrial Machinery and Manufacturing Systems',
     icon: Wrench,
-    cover: imageSlot('3D CAD Model of Mobile Kitchen Trailer', '3D CAD Model of Mobile Kitchen Trailer.jpg', '3D CAD model of mobile kitchen trailer — industrial machinery design'),
+    cover: imageSlot('3D CAD Model of Mobile Kitchen Trailer', '3D CAD Model of Mobile Kitchen Trailer.jpg', '3D CAD model of mobile kitchen trailer: industrial machinery design'),
     images: [
       imageSlot('Mobile Kitchen Trailer', 'Mobile Kitchen Trailer.jpg', 'Mobile kitchen trailer for field operations'),
       imageSlot('Backery Production', 'Backery Production.jpg', 'Automated bakery production line for food processing'),

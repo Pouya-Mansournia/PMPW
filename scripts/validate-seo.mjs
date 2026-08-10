@@ -28,6 +28,14 @@ const seenTitles = new Map();
 const seenCanonicals = new Map();
 for (const file of htmlFiles) {
   const html = await fs.readFile(file, 'utf8');
+  const isRedirectStub = html.includes('http-equiv="refresh"');
+
+  if (isRedirectStub) {
+    if (!html.includes('content="noindex, follow"')) errors.push(`${path.relative(root, file)}: redirect stub missing noindex directive`);
+    if (!/<link\s+rel="canonical"\s+href="https:\/\/mansournia\.info\//i.test(html)) errors.push(`${path.relative(root, file)}: redirect stub missing absolute canonical`);
+    continue;
+  }
+
   for (const required of ['<title>', 'name="description"', 'rel="canonical"', 'property="og:title"', 'name="twitter:card"']) {
     if (!html.includes(required)) errors.push(`${path.relative(root, file)}: missing ${required}`);
   }

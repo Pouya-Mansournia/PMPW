@@ -60,7 +60,7 @@ export default function ProductJourneyPage() {
         <blockquote className="pj-quote">
           My move from Engineering to Product was not a career switch. It was an expansion of ownership.
         </blockquote>
-        <p className="pj-supporting-line">From building technology — to owning products — to understanding the business behind them.</p>
+        <p className="pj-supporting-line">From building technology, to owning products, to understanding the business behind them.</p>
       </section>
 
       <section className="page-section">
@@ -190,7 +190,7 @@ export default function ProductJourneyPage() {
           </svg>
           <p className="pj-venn-caption">
             A product manager’s job is to connect what engineering can feasibly build to what the business can
-            sustainably support — anchored in what the customer actually needs. That intersection is where I try to work.
+            sustainably support, anchored in what the customer actually needs. That intersection is where I try to work.
           </p>
         </div>
 
@@ -405,7 +405,7 @@ export default function ProductJourneyPage() {
             should be measured, and how the surrounding business must work for the product to succeed.
           </p>
           <p>
-            I want to continue working on products where technical depth matters — especially products that sit at
+            I want to continue working on products where technical depth matters, especially products that sit at
             the intersection of hardware, software, AI, robotics, industrial systems, and real-world operations.
           </p>
         </div>

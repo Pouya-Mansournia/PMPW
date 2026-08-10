@@ -1,13 +1,47 @@
-import { BriefcaseBusiness, Cpu, Download, Gauge, MapPin, Settings } from 'lucide-react';
-import { expertiseAreas, profileImage, resumeFile, resumeHighlights, stats } from '../data.js';
+import { BriefcaseBusiness, Cpu, Download, Gauge, Lightbulb, MapPin, Rocket, Settings } from 'lucide-react';
+import { expertiseAreas, portfolioImages, profileImage, resumeFile, resumeHighlights, stats } from '../data.js';
 import PortfolioGallery from '../components/PortfolioGallery.jsx';
 import { useTypewriter } from '../hooks/useTypewriter.js';
+import { useInView } from '../hooks/useInView.js';
 import HeroVideoBackground from '../components/HeroVideoBackground.jsx';
 import { OpenSourceTeaser } from '../components/OpenSourceSystems.jsx';
+import { FeaturedWriting } from '../components/FeaturedWriting.jsx';
 import { navigateTo, routeHref } from '../navigation.js';
+
+const pillars = [
+  {
+    icon: Settings,
+    title: 'Engineering & Robotics',
+    text: 'Real-world robotics, mechatronics, automation, embedded systems, and precision engineering.',
+    cta: 'Explore Work',
+    route: 'works'
+  },
+  {
+    icon: Rocket,
+    title: 'Product & Founder Journey',
+    text: 'Turning real operational pain into validated products, systems, and scalable businesses.',
+    cta: 'Explore Product Journey',
+    route: 'product-journey'
+  },
+  {
+    icon: Lightbulb,
+    title: 'Ideas & Decision Systems',
+    text: 'Research, writing, FoundryOS, ARCHON, and open systems for how I build and make decisions.',
+    cta: 'Explore Writing',
+    route: 'writing'
+  }
+];
+
+const homeGalleryTitles = [
+  'Last-Mile Autonomous Delivery Robot Prototype',
+  'Nano-Precision Motion Control Systems',
+  'High-Speed Wheel Sortation System'
+];
+const homeGalleryImages = portfolioImages.filter((image) => homeGalleryTitles.includes(image.title));
 
 export default function HomePage() {
   const typed = useTypewriter(['Robotics & Automation', 'Warehouse Automation', 'Precision Motion', 'Mechatronics'], 120, 2200);
+  const [pillarRef, pillarVisible] = useInView(0.2);
 
   return (
     <section id="home" className="hero-section page-section">
@@ -15,13 +49,13 @@ export default function HomePage() {
       <div className="hero-copy">
         <div className="availability-pill">
           <span />
-          Robotics Systems Architect · Istanbul
+          Engineering, Robotics &amp; Product · Istanbul
         </div>
-        <p className="eyebrow">Robotics Systems Architect | Mechatronics Engineer | Technical Product Leader</p>
+        <p className="eyebrow">Robotics Systems Architect | Mechatronics Engineer | Founder &amp; Product Leader</p>
         <h1 className="hero-title">Pouya Mansournia<br /><span className="hero-typed">{typed || 'Robotics & Automation'}</span></h1>
         <p className="lead">
-          Building intelligent machines that bridge research and industry.
-          Specializing in autonomous robots, warehouse automation, embedded electronics, and precision motion systems.
+          Building intelligent machines that bridge research and industry, and turning that engineering depth into products, ventures, and decision systems.
+          Autonomous robots, warehouse automation, embedded electronics, precision motion, and founder-led product execution.
         </p>
         <div className="hero-actions">
           <a className="secondary-btn" href={routeHref('contact')} onClick={(event) => navigateTo('contact', event)}>Contact Me</a>
@@ -68,8 +102,8 @@ export default function HomePage() {
       <div className="profile-showcase">
         <div className="profile-showcase-intro">
           <p className="eyebrow">About</p>
-          <h2>The engineer behind the work.</h2>
-          <p className="lead">Over a decade building autonomous robots, embedded systems, and precision motion platforms — from concept to production.</p>
+          <h2>Engineering depth. Product thinking. Founder execution.</h2>
+          <p className="lead">Over a decade building autonomous robots, embedded systems, and precision motion platforms, and turning that engineering depth into products, ventures, and decision systems.</p>
           <div className="resume-highlight-row showcase-highlights">
             {resumeHighlights.map((item) => (
               <article key={item.value}>
@@ -83,7 +117,7 @@ export default function HomePage() {
             View Pouya Mansournia’s full profile
           </a>
         </div>
-        <div className="hero-visual" aria-label="Robotics portfolio hero visual — last-mile autonomous delivery robot">
+        <div className="hero-visual" aria-label="Robotics portfolio hero visual, last-mile autonomous delivery robot">
           <div className="profile-card">
             <div className="profile-image-frame">
               <img
@@ -122,11 +156,33 @@ export default function HomePage() {
 
       <div className="home-gallery">
         <div className="section-title">
-          <p className="eyebrow">Selected Visuals</p>
-          <h2>Engineering builds, prototypes and platforms.</h2>
+          <p className="eyebrow">Selected Work</p>
+          <h2>Robots, systems, and products built and deployed in the real world.</h2>
         </div>
-        <PortfolioGallery />
+        <PortfolioGallery images={homeGalleryImages} />
       </div>
+
+      <div className={`pillar-section reveal ${pillarVisible ? 'is-visible' : ''}`} ref={pillarRef}>
+        <div className="section-title wide">
+          <p className="eyebrow">How It Connects</p>
+          <h2 className="pillar-heading">Engineering <span>×</span> Product <span>×</span> Innovation</h2>
+          <p>Three connected layers of the same way of working: build the system, turn it into a product, and extract the reusable decision behind it.</p>
+        </div>
+        <div className="pillar-grid">
+          {pillars.map(({ icon: Icon, title, text, cta, route }, index) => (
+            <article className={`pillar-card reveal ${pillarVisible ? 'is-visible' : ''}`} style={{ animationDelay: `${index * 110}ms` }} key={title}>
+              <div className="icon-box">
+                <Icon size={26} />
+              </div>
+              <h3>{title}</h3>
+              <p>{text}</p>
+              <a className="text-link" href={routeHref(route)} onClick={(event) => navigateTo(route, event)}>{cta}</a>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <FeaturedWriting />
 
       <OpenSourceTeaser />
     </section>

@@ -10,12 +10,15 @@ import OpenSourcePage from './pages/OpenSourcePage.jsx';
 import AchievementsPage from './pages/AchievementsPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 import DetailPage from './pages/DetailPage.jsx';
+import WritingPage from './pages/WritingPage.jsx';
+import ArticlePage from './pages/ArticlePage.jsx';
 import { blogPosts, works } from './data.js';
+import { writingArticles } from './data/writing.js';
 import { applySeo } from './seo.js';
 import { routeFromBrowserLocation } from './navigation.js';
 import { capturePageView } from './analytics.js';
 
-const pageRoutes = ['home', 'about', 'product-journey', 'publications', 'blog', 'works', 'open-source', 'achievements', 'contact'];
+const pageRoutes = ['home', 'about', 'product-journey', 'publications', 'blog', 'works', 'writing', 'open-source', 'achievements', 'contact'];
 
 export default function App({ initialRoute }) {
   const [route, setRoute] = useState(() => initialRoute || routeFromBrowserLocation());
@@ -39,9 +42,14 @@ export default function App({ initialRoute }) {
     ...works.map((item) => [item.id, { item, parentPath: 'works' }])
   ]), []);
 
+  const articleRoutes = useMemo(() => Object.fromEntries(
+    writingArticles.map((article) => [article.id, article])
+  ), []);
+
   const detailPage = detailRoutes[route];
+  const articlePage = articleRoutes[route];
   const resolvedRoute =
-    detailPage || pageRoutes.includes(route) ? route : 'not-found';
+    detailPage || articlePage || pageRoutes.includes(route) ? route : 'not-found';
 
   useEffect(() => {
     capturePageView(resolvedRoute);
@@ -59,10 +67,12 @@ export default function App({ initialRoute }) {
       {route === 'publications' && <PublicationsPage />}
       {route === 'blog' && <BlogPage />}
       {route === 'works' && <WorksPage />}
+      {route === 'writing' && <WritingPage />}
       {route === 'open-source' && <OpenSourcePage />}
       {route === 'achievements' && <AchievementsPage />}
       {route === 'contact' && <ContactPage />}
       {detailPage && <DetailPage item={detailPage.item} parentPath={detailPage.parentPath} />}
+      {articlePage && <ArticlePage article={articlePage} />}
       {resolvedRoute === 'not-found' && <HomePage />}
     </SiteLayout>
   );

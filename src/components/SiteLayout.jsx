@@ -94,7 +94,7 @@ export default function SiteLayout({ children, activeRoute = 'home' }) {
   return (
     <div className="site-shell">
       <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
-        <a className="brand" href={routeHref('home')} onClick={(event) => handleNav('home', event)} aria-label="Pouya Mansournia — home">
+        <a className="brand" href={routeHref('home')} onClick={(event) => handleNav('home', event)} aria-label="Pouya Mansournia, home">
           <span className="brand-text">
             <strong>Pouya Mansournia</strong>
             <small>Robotics | Automation | Precision Motion</small>
@@ -203,7 +203,7 @@ export default function SiteLayout({ children, activeRoute = 'home' }) {
       <footer className="site-footer">
         <div className="footer-copy">
           <strong>Pouya Mansournia</strong>
-          <span>Robotics Systems Architect — autonomous robots, warehouse automation, embedded electronics and precision motion systems.</span>
+          <span>Robotics Systems Architect: autonomous robots, warehouse automation, embedded electronics and precision motion systems.</span>
         </div>
         <nav className="footer-socials" aria-label="Professional links">
           {footerLinks.map(({ label, href, initials }) => (

@@ -10,7 +10,7 @@ export default function OpenSourcePage() {
       <div className="open-source-hero">
         <div>
           <p className="eyebrow">Open Source Systems</p>
-          <h1>Operating systems for engineering, robotics, AI agents, and product execution.</h1>
+          <h1>Open systems for how I think, build, and make decisions.</h1>
           <p className="lead">
             I design and publish open-source operating systems that turn engineering knowledge into repeatable execution frameworks,
             from robotics system design and AI-agent workflows to product strategy and startup execution.
@@ -41,12 +41,12 @@ export default function OpenSourcePage() {
           </span>
           <span className="architecture-node node-foundry">
             <small>02</small>
-            <strong>Foundry OS</strong>
+            <strong>FoundryOS</strong>
             <em>Product</em>
           </span>
           <span className="architecture-node node-archon">
             <small>03</small>
-            <strong>ARCHON OS</strong>
+            <strong>ARCHON</strong>
             <em>AI Agents</em>
           </span>
           <div className="architecture-connector connector-reos" />
