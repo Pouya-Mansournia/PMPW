@@ -36,8 +36,12 @@ function SystemCard({ system, compact = false }) {
   );
 }
 
+const compactExcludedIds = ['grabcad-library', 'ros2-zero-to-robot', 'delivery-robot-ros'];
+
 export function OpenSourceSystemsGrid({ compact = false }) {
-  const systems = compact ? openSourceSystems.filter((system) => system.id !== 'grabcad-library') : openSourceSystems;
+  const systems = compact
+    ? openSourceSystems.filter((system) => !compactExcludedIds.includes(system.id))
+    : openSourceSystems;
 
   return (
     <div className={`open-source-grid ${compact ? 'compact' : ''}`}>
