@@ -588,19 +588,43 @@ export const publications = [
   },
   {
     icon: BookOpen,
-    title: 'Distributed Active Sensing for Autonomous Indoor Acoustic Optimization Using Reverberation-Time Estimation and Adaptive Treatment Recommendation',
-    venue: 'Peer-reviewed journal manuscript',
-    year: 'Under Review 2026',
-    text: 'Under-review manuscript on distributed active sensing, reverberation-time estimation and adaptive acoustic treatment recommendation for autonomous indoor acoustic optimization.',
-    highlights: ['Under Review', '2026', 'Acoustic Optimization', 'Distributed Sensing']
+    title: 'Design, Modeling, and Experimental Validation of a Piezo-Driven Fast Steering Mirror with a Hybrid Circular–Elliptical Flexure Hinge',
+    venue: 'Submitted to Sensors and Actuators Reports (Elsevier)',
+    year: 'Submitted 2026',
+    text: 'Submitted manuscript on the design, modeling and experimental validation of a piezo-driven fast steering mirror using a hybrid circular–elliptical flexure hinge.',
+    highlights: ['Submitted', '2026', 'Piezo Actuation', 'Flexure Hinge']
   },
   {
     icon: BookOpen,
-    title: 'Design, Embedded Closed-Loop Control, and Interferometric Validation of a Piezo-Driven Flexure-Based Fast Steering Mirror',
-    venue: 'Peer-reviewed journal manuscript',
-    year: 'Under Review 2026',
-    text: 'Under-review manuscript on piezo-driven flexure-based fast steering mirror design, embedded closed-loop control and interferometric validation for precision optical positioning.',
-    highlights: ['Under Review', '2026', 'Piezo Actuation', 'Interferometric Validation']
+    title: 'Privacy-Preserving Long-Term Acoustic Exposure Dynamics in an Occupied Multi-Floor Office Building Using Distributed dB-Only IoT Monitoring',
+    venue: 'Submitted to Internet of Things (Elsevier)',
+    year: 'Submitted 2026',
+    text: 'Submitted manuscript on privacy-preserving long-term acoustic exposure dynamics in an occupied multi-floor office building using distributed dB-only IoT monitoring.',
+    highlights: ['Submitted', '2026', 'Acoustic Monitoring', 'IoT']
+  },
+  {
+    icon: BookOpen,
+    title: 'Cost of Intelligence in Multi-Robot Failover: A Paired-Seed Comparison of Deterministic, LLM-Based, and Hybrid Recovery',
+    venue: 'Submitted to IEEE Access (IEEE)',
+    year: 'Submitted 2026',
+    text: 'Submitted manuscript presenting a paired-seed comparison of deterministic, LLM-based and hybrid recovery strategies for multi-robot failover.',
+    highlights: ['Submitted', '2026', 'Multi-Robot Systems', 'LLM-Based Recovery']
+  },
+  {
+    icon: BookOpen,
+    title: 'From Reasoning Allocation to Behavioural Specialisation: Boundary Results in Multi-Robot Systems',
+    venue: 'Submitted to Autonomous Robots (Springer Nature)',
+    year: 'Submitted 2026',
+    text: 'Submitted manuscript on boundary results connecting reasoning allocation to behavioural specialisation in multi-robot systems.',
+    highlights: ['Submitted', '2026', 'Multi-Robot Systems', 'Reasoning Allocation']
+  },
+  {
+    icon: BookOpen,
+    title: 'The Cost and Limits of Proactive Reasoning Allocation in Multi-Robot Coordination',
+    venue: 'Submitted to Robotics and Autonomous Systems (Elsevier)',
+    year: 'Submitted 2026',
+    text: 'Submitted manuscript examining the cost and limits of proactive reasoning allocation in multi-robot coordination.',
+    highlights: ['Submitted', '2026', 'Multi-Robot Systems', 'Reasoning Allocation']
   },
   {
     icon: BookOpen,
