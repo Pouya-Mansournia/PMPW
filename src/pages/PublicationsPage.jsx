@@ -22,7 +22,7 @@ export default function PublicationsPage() {
       </div>
 
       <div className="publications-list">
-        {publications.map(({ title, venue, year, href, text, highlights }) => (
+        {publications.map(({ title, venue, year, href, text, highlights, links }) => (
           <article className="publication-card" key={title}>
             <div className="publication-meta">
               <span>{year}</span>
@@ -44,6 +44,16 @@ export default function PublicationsPage() {
                 <span key={item}>{item}</span>
               ))}
             </div>
+            {links && links.length > 0 && (
+              <div className="publication-links" aria-label="Related repositories">
+                {links.map((link) => (
+                  <a key={link.href} className="publication-repo-link" href={link.href} target="_blank" rel="noopener noreferrer">
+                    {link.label}
+                    <ExternalLink size={14} />
+                  </a>
+                ))}
+              </div>
+            )}
           </article>
         ))}
       </div>

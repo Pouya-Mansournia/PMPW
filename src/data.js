@@ -600,7 +600,8 @@ export const publications = [
     venue: 'Submitted to Internet of Things (Elsevier)',
     year: 'Submitted 2026',
     text: 'Submitted manuscript on privacy-preserving long-term acoustic exposure dynamics in an occupied multi-floor office building using distributed dB-only IoT monitoring.',
-    highlights: ['Submitted', '2026', 'Acoustic Monitoring', 'IoT']
+    highlights: ['Submitted', '2026', 'Acoustic Monitoring', 'IoT'],
+    links: [{ label: 'acoustic-exposure-dynamics-dataset', href: 'https://github.com/Pouya-Mansournia/acoustic-exposure-dynamics-dataset' }]
   },
   {
     icon: BookOpen,
@@ -608,7 +609,8 @@ export const publications = [
     venue: 'Submitted to IEEE Access (IEEE)',
     year: 'Submitted 2026',
     text: 'Submitted manuscript presenting a paired-seed comparison of deterministic, LLM-based and hybrid recovery strategies for multi-robot failover.',
-    highlights: ['Submitted', '2026', 'Multi-Robot Systems', 'LLM-Based Recovery']
+    highlights: ['Submitted', '2026', 'Multi-Robot Systems', 'LLM-Based Recovery'],
+    links: [{ label: 'warehouse-amr-emergent-agents-public', href: 'https://github.com/Pouya-Mansournia/warehouse-amr-emergent-agents-public' }]
   },
   {
     icon: BookOpen,
@@ -616,7 +618,11 @@ export const publications = [
     venue: 'Submitted to Autonomous Robots (Springer Nature)',
     year: 'Submitted 2026',
     text: 'Submitted manuscript on boundary results connecting reasoning allocation to behavioural specialisation in multi-robot systems.',
-    highlights: ['Submitted', '2026', 'Multi-Robot Systems', 'Reasoning Allocation']
+    highlights: ['Submitted', '2026', 'Multi-Robot Systems', 'Reasoning Allocation'],
+    links: [
+      { label: 'RACA-Collective-Public', href: 'https://github.com/Pouya-Mansournia/RACA-Collective-Public' },
+      { label: 'RACA-public', href: 'https://github.com/Pouya-Mansournia/RACA-public' }
+    ]
   },
   {
     icon: BookOpen,
