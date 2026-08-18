@@ -619,14 +619,14 @@ export const publications = [
     year: 'Submitted 2026',
     href: 'https://github.com/Pouya-Mansournia/RACA-Collective-Public',
     text: 'Submitted manuscript on boundary results connecting reasoning allocation to behavioural specialisation in multi-robot systems.',
-    highlights: ['Submitted', '2026', 'Multi-Robot Systems', 'Reasoning Allocation'],
-    links: [{ label: 'RACA-public', href: 'https://github.com/Pouya-Mansournia/RACA-public' }]
+    highlights: ['Submitted', '2026', 'Multi-Robot Systems', 'Reasoning Allocation']
   },
   {
     icon: BookOpen,
     title: 'The Cost and Limits of Proactive Reasoning Allocation in Multi-Robot Coordination',
     venue: 'Submitted to Robotics and Autonomous Systems (Elsevier)',
     year: 'Submitted 2026',
+    href: 'https://github.com/Pouya-Mansournia/RACA-public',
     text: 'Submitted manuscript examining the cost and limits of proactive reasoning allocation in multi-robot coordination.',
     highlights: ['Submitted', '2026', 'Multi-Robot Systems', 'Reasoning Allocation']
   },
