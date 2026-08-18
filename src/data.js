@@ -599,30 +599,28 @@ export const publications = [
     title: 'Privacy-Preserving Long-Term Acoustic Exposure Dynamics in an Occupied Multi-Floor Office Building Using Distributed dB-Only IoT Monitoring',
     venue: 'Submitted to Internet of Things (Elsevier)',
     year: 'Submitted 2026',
+    href: 'https://github.com/Pouya-Mansournia/acoustic-exposure-dynamics-dataset',
     text: 'Submitted manuscript on privacy-preserving long-term acoustic exposure dynamics in an occupied multi-floor office building using distributed dB-only IoT monitoring.',
-    highlights: ['Submitted', '2026', 'Acoustic Monitoring', 'IoT'],
-    links: [{ label: 'acoustic-exposure-dynamics-dataset', href: 'https://github.com/Pouya-Mansournia/acoustic-exposure-dynamics-dataset' }]
+    highlights: ['Submitted', '2026', 'Acoustic Monitoring', 'IoT']
   },
   {
     icon: BookOpen,
     title: 'Cost of Intelligence in Multi-Robot Failover: A Paired-Seed Comparison of Deterministic, LLM-Based, and Hybrid Recovery',
     venue: 'Submitted to IEEE Access (IEEE)',
     year: 'Submitted 2026',
+    href: 'https://github.com/Pouya-Mansournia/warehouse-amr-emergent-agents-public',
     text: 'Submitted manuscript presenting a paired-seed comparison of deterministic, LLM-based and hybrid recovery strategies for multi-robot failover.',
-    highlights: ['Submitted', '2026', 'Multi-Robot Systems', 'LLM-Based Recovery'],
-    links: [{ label: 'warehouse-amr-emergent-agents-public', href: 'https://github.com/Pouya-Mansournia/warehouse-amr-emergent-agents-public' }]
+    highlights: ['Submitted', '2026', 'Multi-Robot Systems', 'LLM-Based Recovery']
   },
   {
     icon: BookOpen,
     title: 'From Reasoning Allocation to Behavioural Specialisation: Boundary Results in Multi-Robot Systems',
     venue: 'Submitted to Autonomous Robots (Springer Nature)',
     year: 'Submitted 2026',
+    href: 'https://github.com/Pouya-Mansournia/RACA-Collective-Public',
     text: 'Submitted manuscript on boundary results connecting reasoning allocation to behavioural specialisation in multi-robot systems.',
     highlights: ['Submitted', '2026', 'Multi-Robot Systems', 'Reasoning Allocation'],
-    links: [
-      { label: 'RACA-Collective-Public', href: 'https://github.com/Pouya-Mansournia/RACA-Collective-Public' },
-      { label: 'RACA-public', href: 'https://github.com/Pouya-Mansournia/RACA-public' }
-    ]
+    links: [{ label: 'RACA-public', href: 'https://github.com/Pouya-Mansournia/RACA-public' }]
   },
   {
     icon: BookOpen,
