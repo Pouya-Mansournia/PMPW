@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import { navItems, professionalLinks } from '../data.js';
 import { navigateTo, routeHref } from '../navigation.js';
 
@@ -63,6 +63,10 @@ export default function SiteLayout({ children, activeRoute = 'home' }) {
     };
     window.addEventListener('keydown', closeOnEscape);
     return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [open]);
+
+  useEffect(() => {
+    if (!open) setActiveDropdown(null);
   }, [open]);
 
   const handleNav = (path, event) => {
@@ -165,33 +169,50 @@ export default function SiteLayout({ children, activeRoute = 'home' }) {
           {navItems.map((item) => {
             const isActive = isRouteInGroup(item);
             const hasChildren = item.children?.length > 0;
+            const isOpen = activeDropdown === item.path;
 
             return (
-              <div key={item.path}>
-                <a className={isActive ? 'is-active' : ''} href={routeHref(item.path)} onClick={(event) => handleNav(item.path, event)} aria-current={isActive ? 'page' : undefined}>
+              <div key={item.path} className={`mobile-nav-group ${isOpen ? 'is-open' : ''}`}>
+                <a
+                  className={isActive ? 'is-active' : ''}
+                  href={routeHref(item.path)}
+                  onClick={(event) => {
+                    if (hasChildren) {
+                      event.preventDefault();
+                      toggleDropdown(item.path);
+                    } else {
+                      handleNav(item.path, event);
+                    }
+                  }}
+                  aria-expanded={hasChildren ? isOpen : undefined}
+                  aria-current={isActive ? 'page' : undefined}
+                >
                   {item.label}
+                  {hasChildren && <ChevronDown size={16} className="mobile-nav-chevron" aria-hidden="true" />}
                 </a>
-                {hasChildren && (
-                  <a
-                    href={routeHref(item.path)}
-                    className={`mobile-sub ${activeRoute === item.path ? 'is-active' : ''}`}
-                    onClick={(event) => handleNav(item.path, event)}
-                    aria-current={activeRoute === item.path ? 'page' : undefined}
-                  >
-                    {item.allLabel || item.label}
-                  </a>
+                {hasChildren && isOpen && (
+                  <div className="mobile-submenu">
+                    <a
+                      href={routeHref(item.path)}
+                      className={`mobile-sub ${activeRoute === item.path ? 'is-active' : ''}`}
+                      onClick={(event) => handleNav(item.path, event)}
+                      aria-current={activeRoute === item.path ? 'page' : undefined}
+                    >
+                      {item.allLabel || item.label}
+                    </a>
+                    {item.children.map((child) => (
+                      <a
+                        href={routeHref(child.path)}
+                        className={`mobile-sub ${activeRoute === child.path ? 'is-active' : ''}`}
+                        key={child.path}
+                        onClick={(event) => handleNav(child.path, event)}
+                        aria-current={activeRoute === child.path ? 'page' : undefined}
+                      >
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
                 )}
-                {item.children?.map((child) => (
-                  <a
-                    href={routeHref(child.path)}
-                    className={`mobile-sub ${activeRoute === child.path ? 'is-active' : ''}`}
-                    key={child.path}
-                    onClick={(event) => handleNav(child.path, event)}
-                    aria-current={activeRoute === child.path ? 'page' : undefined}
-                  >
-                    {child.label}
-                  </a>
-                ))}
               </div>
             );
           })}
