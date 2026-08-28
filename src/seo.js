@@ -7,7 +7,7 @@ export const PERSON_ID = `${SITE_URL}/#person`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 export const DEFAULT_SOCIAL_IMAGE = `${SITE_URL}/portfolio-images/Last-Mile%20Autonomous%20Delivery%20Robot%20Prototype.jpg`;
 
-const defaultDescription = 'Pouya Mansournia is a robotics systems architect, mechatronics engineer, and founder working across autonomous mobile robots, warehouse automation, embedded systems, precision mechanisms, product management, innovation, and AI-assisted product development.';
+const defaultDescription = 'Pouya Mansournia is a robotics systems architect, mechatronics engineer, and AI researcher in multi-robot systems, working across autonomous mobile robots, warehouse automation, embedded systems, precision mechanisms, product management, innovation, and AI-assisted product development.';
 
 const pageSeo = {
   home: {
@@ -164,6 +164,8 @@ function personEntity() {
       'Innovation management',
       'AI-assisted product development',
       'AI research in multi-robot systems',
+      'Emergent multi-agent behavior',
+      'Digital twin simulation',
       'Founder and startup execution',
       'Industrial automation'
     ],

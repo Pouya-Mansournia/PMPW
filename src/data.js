@@ -870,7 +870,7 @@ export const productToolkitGroups = [
 export const systemLayers = [
   {
     id: 'operations',
-    title: 'Operations & Business',
+    title: 'Product & Business',
     blurb: 'Throughput, cost, service levels, and the operational outcomes a system is accountable for.',
     tags: ['Operations', 'Product', 'Unit Economics'],
     links: [
@@ -882,7 +882,7 @@ export const systemLayers = [
     id: 'decision',
     title: 'Decision & Orchestration',
     blurb: 'Mission planning, task decomposition, resource scheduling, and fleet-level coordination.',
-    tags: ['Orchestration', 'Scheduling', 'Resource Assignment'],
+    tags: ['Orchestration', 'Scheduling', 'Telemetry', 'Resource Assignment'],
     links: [
       { label: 'Open-source decision systems', route: 'open-source' }
     ]
@@ -891,7 +891,7 @@ export const systemLayers = [
     id: 'twin',
     title: 'Digital Twin & Simulation',
     blurb: 'A simulation model that validates decisions and answers capacity questions before deployment.',
-    tags: ['Digital Twin', 'FlexSim', 'Capacity Analysis'],
+    tags: ['Digital Twin', 'FlexSim', 'Telemetry', 'Capacity Analysis'],
     links: [
       { label: 'Intelligent Warehouse Digital Twin', route: 'case-warehouse-digital-twin' }
     ]
@@ -1102,7 +1102,7 @@ export const caseWarehouseDigitalTwin = {
   repo: 'https://github.com/Pouya-Mansournia/flexsim-digital-twin',
   role: 'Architecture and implementation',
   timeframe: '2026',
-  tags: ['Digital Twin', 'FlexSim', 'Robot Orchestration', 'FastAPI', 'ROS 2', 'Warehouse Automation'],
+  tags: ['Digital Twin', 'FlexSim', 'Robot Orchestration', 'Telemetry', 'FastAPI', 'ROS 2', 'Warehouse Automation'],
   pipeline: ['FlexSim model', 'Telemetry bridge', 'Orchestration and scheduling', 'ROS 2 execution', 'Physical robots'],
   concept: 'FlexSim validates decisions. The orchestration layer makes decisions. ROS 2 executes robot behavior.',
   sections: [

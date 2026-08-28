@@ -51,11 +51,11 @@ export default function HomePage() {
           <span />
           Engineering, Robotics &amp; Product · Istanbul
         </div>
-        <p className="eyebrow">Robotics Systems Architect | Mechatronics Engineer | Founder &amp; Product Leader</p>
+        <p className="eyebrow">Robotics Systems Architect | Mechatronics Engineer | AI Researcher | Founder &amp; Product Leader</p>
         <h1 className="hero-title">Pouya Mansournia<br /><span className="hero-typed">{typed || 'Robotics & Automation'}</span></h1>
         <p className="lead">
           Building intelligent machines that bridge research and industry, and turning that engineering depth into products, ventures, and decision systems.
-          Autonomous robots, warehouse automation, embedded electronics, precision motion, and founder-led product execution.
+          Autonomous robots, warehouse automation, embedded electronics, AI-assisted systems, precision motion, and founder-led product execution.
         </p>
         <div className="hero-actions">
           <a className="secondary-btn" href={routeHref('contact')} onClick={(event) => navigateTo('contact', event)}>Contact Me</a>

@@ -180,14 +180,15 @@ export default function AboutPage() {
         <div className="about-copy">
           <p>
             My work started in mechanical design, mechatronics, embedded systems, and automation, and has since expanded into
-            product management, innovation, and founder-level execution. I build real systems: mechanisms and platforms that
-            move from concept to prototype, testing, and deployment, and products that move from a real problem to a validated,
-            working business.
+            product management, AI research, innovation, and founder-level execution. I build real systems: mechanisms and
+            platforms that move from concept to prototype, testing, and deployment, and products that move from a real problem
+            to a validated, working business.
           </p>
           <p>
             My engineering experience covers robotic platforms, AGVs, delivery robots, warehouse automation, material handling
             systems, wheel sorters, conveyors, precision positioning, piezo-actuated systems, flexure mechanisms, and custom
-            machinery, the technical foundation behind the product and founder work I do today.
+            machinery, alongside my current AI research on multi-robot systems, the technical foundation behind the product
+            and founder work I do today.
           </p>
 
           <div className="about-cards">

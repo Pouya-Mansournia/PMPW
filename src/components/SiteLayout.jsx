@@ -203,7 +203,7 @@ export default function SiteLayout({ children, activeRoute = 'home' }) {
       <footer className="site-footer">
         <div className="footer-copy">
           <strong>Pouya Mansournia</strong>
-          <span>Robotics Systems Architect and AI Product Researcher, building autonomous robots, digital twins, and precision motion systems.</span>
+          <span>Robotics Systems Architect and AI Product Researcher, building autonomous robots, digital twins, and precision motion products.</span>
         </div>
         <nav className="footer-socials" aria-label="Professional links">
           {footerLinks.map(({ label, href, initials }) => (
