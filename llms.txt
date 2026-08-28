@@ -9,7 +9,9 @@ Pouya Mansournia is a robotics systems architect, mechatronics engineer, and fou
 - Home: https://mansournia.info/
 - About (My Story, Experience, Education, Product Journey): https://mansournia.info/about/
 - Product Journey: https://mansournia.info/product-journey/
+- Systems (work organized by system layer, from simulation to physical deployment): https://mansournia.info/systems/
 - Work (engineering, robotics, and product case studies): https://mansournia.info/work/
+- Case study, From Warehouse Simulation to Robot Orchestration (Intelligent Warehouse Digital Twin): https://mansournia.info/work/intelligent-warehouse-digital-twin/
 - Research (publications and engineering notes): https://mansournia.info/research/
 - Engineering articles: https://mansournia.info/articles/
 - Writing (long-form essays and case studies): https://mansournia.info/writing/
@@ -34,6 +36,7 @@ Note: `/projects/` and its subpaths are legacy URLs that redirect to the equival
 - FoundryOS (product & startup execution operating system): https://github.com/Pouya-Mansournia/FoundryOS
 - REOS (robotics engineering operating system): https://github.com/Pouya-Mansournia/REOS
 - ARCHON (AI-agentic architecture & decision operating system): https://github.com/Pouya-Mansournia/ARCHON
+- FlexSim Digital Twin (warehouse digital twin & robot orchestration): https://github.com/Pouya-Mansournia/flexsim-digital-twin
 - Warehouse AMR ROS2: https://github.com/Pouya-Mansournia/warehouse-amr-ros2
 - ROS 2: Zero to Robot: https://github.com/Pouya-Mansournia/ros2-zero-to-robot
 - Delivery Robot ROS: https://github.com/Pouya-Mansournia/Delivery-Robot-ROS
