@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import {
   journeyStages,
+  productJourneyArc,
   productProcessSteps,
   productCapabilityGroups,
   productCaseStudies,
@@ -61,6 +62,21 @@ export default function ProductJourneyPage() {
           My move from Engineering to Product was not a career switch. It was an expansion of ownership.
         </blockquote>
         <p className="pj-supporting-line">From building technology, to owning products, to understanding the business behind them.</p>
+      </section>
+
+      <section className="page-section pj-arc">
+        <p className="eyebrow">At a glance</p>
+        <ol className="pj-arc-track">
+          {productJourneyArc.map((stage, index) => (
+            <Fragment key={stage}>
+              <li>{stage}</li>
+              {index < productJourneyArc.length - 1 && (
+                <span className="pj-arc-sep" aria-hidden="true"><ArrowRight size={14} /></span>
+              )}
+            </Fragment>
+          ))}
+        </ol>
+        <p className="pj-supporting-line">Each step widened what I was responsible for, not what field I worked in.</p>
       </section>
 
       <section className="page-section">

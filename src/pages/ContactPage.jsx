@@ -58,7 +58,7 @@ export default function ContactPage() {
           </a>
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '32px' }}>
+        <div className="magnetic-dock-wrap" style={{ display: 'flex', justifyContent: 'center', marginTop: '32px' }}>
           <MagneticDock items={dockItems} />
         </div>
       </div>

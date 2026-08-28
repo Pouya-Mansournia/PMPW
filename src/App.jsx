@@ -3,6 +3,8 @@ import SiteLayout from './components/SiteLayout.jsx';
 import HomePage from './pages/HomePage.jsx';
 import AboutPage from './pages/AboutPage.jsx';
 import ProductJourneyPage from './pages/ProductJourneyPage.jsx';
+import SystemsPage from './pages/SystemsPage.jsx';
+import WarehouseDigitalTwinCaseStudy from './pages/WarehouseDigitalTwinCaseStudy.jsx';
 import PublicationsPage from './pages/PublicationsPage.jsx';
 import BlogPage from './pages/BlogPage.jsx';
 import WorksPage from './pages/WorksPage.jsx';
@@ -18,7 +20,7 @@ import { applySeo } from './seo.js';
 import { routeFromBrowserLocation } from './navigation.js';
 import { capturePageView } from './analytics.js';
 
-const pageRoutes = ['home', 'about', 'product-journey', 'publications', 'blog', 'works', 'writing', 'open-source', 'achievements', 'contact'];
+const pageRoutes = ['home', 'about', 'product-journey', 'systems', 'case-warehouse-digital-twin', 'publications', 'blog', 'works', 'writing', 'open-source', 'achievements', 'contact'];
 
 export default function App({ initialRoute }) {
   const [route, setRoute] = useState(() => initialRoute || routeFromBrowserLocation());
@@ -64,6 +66,8 @@ export default function App({ initialRoute }) {
       {route === 'home' && <HomePage />}
       {route === 'about' && <AboutPage />}
       {route === 'product-journey' && <ProductJourneyPage />}
+      {route === 'systems' && <SystemsPage />}
+      {route === 'case-warehouse-digital-twin' && <WarehouseDigitalTwinCaseStudy />}
       {route === 'publications' && <PublicationsPage />}
       {route === 'blog' && <BlogPage />}
       {route === 'works' && <WorksPage />}

@@ -38,16 +38,37 @@ function SystemCard({ system, compact = false }) {
 
 const compactExcludedIds = ['grabcad-library', 'ros2-zero-to-robot', 'delivery-robot-ros'];
 
+// Preserve first-seen order of groups as they appear in the data.
+const groupOrder = [...new Set(openSourceSystems.map((system) => system.group || 'Systems'))];
+
 export function OpenSourceSystemsGrid({ compact = false }) {
-  const systems = compact
-    ? openSourceSystems.filter((system) => !compactExcludedIds.includes(system.id))
-    : openSourceSystems;
+  if (compact) {
+    const systems = openSourceSystems.filter((system) => !compactExcludedIds.includes(system.id));
+    return (
+      <div className="open-source-grid compact">
+        {systems.map((system) => (
+          <SystemCard key={system.id} system={system} compact />
+        ))}
+      </div>
+    );
+  }
 
   return (
-    <div className={`open-source-grid ${compact ? 'compact' : ''}`}>
-      {systems.map((system) => (
-        <SystemCard key={system.id} system={system} compact={compact} />
-      ))}
+    <div className="open-source-groups">
+      {groupOrder.map((group) => {
+        const systems = openSourceSystems.filter((system) => (system.group || 'Systems') === group);
+        if (systems.length === 0) return null;
+        return (
+          <div className="open-source-group" key={group}>
+            <p className="eyebrow">{group}</p>
+            <div className="open-source-grid">
+              {systems.map((system) => (
+                <SystemCard key={system.id} system={system} />
+              ))}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

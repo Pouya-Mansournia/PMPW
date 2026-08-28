@@ -1,5 +1,5 @@
 import { ExternalLink } from 'lucide-react';
-import { publications, professionalLinks } from '../data.js';
+import { publications, professionalLinks, researchThemes } from '../data.js';
 
 const researchGate = professionalLinks.find((link) => link.label === 'ResearchGate');
 
@@ -21,6 +21,25 @@ export default function PublicationsPage() {
         )}
       </div>
 
+      <div className="research-themes">
+        <div className="section-title">
+          <p className="eyebrow">Research Themes</p>
+          <h2>Three directions the work keeps returning to.</h2>
+        </div>
+        <div className="research-themes-grid">
+          {researchThemes.map((theme) => (
+            <article className="research-theme" key={theme.title}>
+              <h3>{theme.title}</h3>
+              <p>{theme.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div className="section-title">
+        <p className="eyebrow">Publications &amp; Manuscripts</p>
+        <h2>Papers, team description papers, and submitted manuscripts.</h2>
+      </div>
       <div className="publications-list">
         {publications.map(({ title, venue, year, href, text, highlights, links }) => (
           <article className="publication-card" key={title}>

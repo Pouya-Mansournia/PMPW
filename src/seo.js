@@ -27,6 +27,17 @@ const pageSeo = {
     image: `${SITE_URL}/portfolio-images/Profile%20Photo.jpg`,
     type: 'website'
   },
+  systems: {
+    title: 'Systems | Pouya Mansournia: Simulation to Physical Deployment',
+    description: 'How Pouya Mansournia’s work connects across system layers: operations, decision and orchestration, digital twin and simulation, ROS 2 autonomy, embedded and edge control, and physical robots and automation.',
+    type: 'website'
+  },
+  'case-warehouse-digital-twin': {
+    title: 'From Warehouse Simulation to Robot Orchestration | Pouya Mansournia',
+    description: 'A case study on building a digital-twin architecture where a FlexSim warehouse model validates decisions, an orchestration layer coordinates resources, and ROS 2 can execute robot-level behavior.',
+    image: `${SITE_URL}/portfolio-images/digital-twin-overview.png`,
+    type: 'article'
+  },
   works: {
     title: 'Work | Pouya Mansournia: Engineering, Robotics & Product',
     description: 'Pouya Mansournia’s work across mobile robotics, manipulators, UAV systems, precision positioning, warehouse automation, embedded electronics, industrial machinery, and product/founder execution.',
@@ -140,7 +151,7 @@ function personEntity() {
     url: `${SITE_URL}/`,
     image: `${SITE_URL}/portfolio-images/Profile%20Photo.jpg`,
     description: defaultDescription,
-    jobTitle: ['Robotics Systems Architect', 'Mechatronics Engineer', 'Founder & Product Leader'],
+    jobTitle: ['Robotics Systems Architect', 'Mechatronics Engineer', 'AI Researcher', 'Founder & Product Leader'],
     knowsAbout: [
       'Robotics systems architecture',
       'Autonomous mobile robots',
@@ -152,6 +163,7 @@ function personEntity() {
       'Product development',
       'Innovation management',
       'AI-assisted product development',
+      'AI research in multi-robot systems',
       'Founder and startup execution',
       'Industrial automation'
     ],
@@ -243,6 +255,28 @@ export function getStructuredData(route) {
         isPartOf: { '@id': `${absoluteUrl('writing')}#webpage` }
       },
       breadcrumb(route, article.title, 'writing')
+    );
+  } else if (route === 'case-warehouse-digital-twin') {
+    const workId = `${absoluteUrl(route)}#creative-work`;
+    graph.push(
+      {
+        ...webPage(route, seo.title, seo.description),
+        mainEntity: { '@id': workId },
+        breadcrumb: { '@id': `${absoluteUrl(route)}#breadcrumb` }
+      },
+      {
+        '@type': 'CreativeWork',
+        '@id': workId,
+        url: absoluteUrl(route),
+        name: 'Intelligent Warehouse Digital Twin',
+        headline: seo.title,
+        description: seo.description,
+        image: seo.image,
+        creator: { '@id': PERSON_ID },
+        keywords: ['Digital Twin', 'FlexSim', 'Robot Orchestration', 'FastAPI', 'ROS 2', 'Warehouse Automation'],
+        isPartOf: { '@id': `${absoluteUrl('works')}#webpage` }
+      },
+      breadcrumb(route, 'From Warehouse Simulation to Robot Orchestration', 'works')
     );
   } else if (detailByRoute[route]) {
     const { item, parent } = detailByRoute[route];

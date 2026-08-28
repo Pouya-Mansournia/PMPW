@@ -36,11 +36,13 @@ export const navItems = [
       { label: 'Achievements', path: 'achievements' }
     ]
   },
+  { label: 'Systems', path: 'systems' },
   {
     label: 'Work',
     path: 'works',
     allLabel: 'Work Overview',
     children: [
+      { label: 'Warehouse Digital Twin', path: 'case-warehouse-digital-twin' },
       { label: 'Robotics Platforms', path: 'work-robotics' },
       { label: 'Manipulators', path: 'work-manipulator' },
       { label: 'Wheeled Robots', path: 'work-wheels-robot' },
@@ -67,9 +69,21 @@ export const navItems = [
 
 export const openSourceSystems = [
   {
+    id: 'flexsim-digital-twin',
+    title: 'FlexSim Digital Twin',
+    category: 'Warehouse Digital Twin & Robot Orchestration',
+    group: 'Robotics Systems',
+    icon: Layers3,
+    description: 'A working digital-twin integration that bridges a FlexSim warehouse model with a real-time orchestration layer and a robot fleet: FlexSim validates decisions, the orchestration layer makes them, and ROS 2 executes robot-level behavior.',
+    themes: ['Digital Twin', 'FlexSim', 'Robot Orchestration', 'FastAPI', 'ROS 2', 'Warehouse Automation'],
+    github: 'https://github.com/Pouya-Mansournia/flexsim-digital-twin',
+    documentation: 'https://github.com/Pouya-Mansournia/flexsim-digital-twin#readme'
+  },
+  {
     id: 'foundry-os',
     title: 'FoundryOS',
     category: 'Product & Startup Execution OS',
+    group: 'Engineering Intelligence',
     icon: GitBranch,
     description: 'An open-source operating framework for turning ideas into structured execution across product strategy, GTM, business models, team structure, and founder-level decisions.',
     themes: ['Product strategy', 'Startup execution', 'GTM thinking', 'Business model design', 'Team structure', 'Founder decisions'],
@@ -80,6 +94,7 @@ export const openSourceSystems = [
     id: 'reos',
     title: 'REOS',
     category: 'Robotics Engineering Operating System',
+    group: 'Engineering Intelligence',
     icon: Bot,
     description: 'A robotics engineering operating system for structuring projects from requirements to architecture, hardware, software, standards, documentation, testing, and deployment.',
     themes: ['Robotics system design', 'Agent architecture', 'Hardware/software integration', 'Robotics standards', 'OPC UA', 'Testing and deployment'],
@@ -90,6 +105,7 @@ export const openSourceSystems = [
     id: 'archon-os',
     title: 'ARCHON',
     category: 'AI Agentic Architecture & Decision OS',
+    group: 'Engineering Intelligence',
     icon: Layers3,
     description: 'A decision and architecture operating system for technical founders, engineers, and AI-agent workflows before code is written.',
     themes: ['AI-agent workflows', 'Software architecture', 'Technical decisions', 'System design', 'Execution loops', 'Stack selection'],
@@ -100,6 +116,7 @@ export const openSourceSystems = [
     id: 'grabcad-library',
     title: 'GrabCAD Library',
     category: 'Open Engineering CAD Models',
+    group: 'Embedded & Mechatronics',
     icon: Wrench,
     description: 'A public engineering model library for sharing mechanical design work, CAD references, components, and practical robotics and automation design assets.',
     themes: ['CAD models', 'Mechanical design', 'Robotics components', 'Automation hardware', 'Design references', 'Engineering sharing'],
@@ -110,6 +127,7 @@ export const openSourceSystems = [
     id: 'warehouse-amr-ros2',
     title: 'Warehouse AMR ROS2',
     category: 'Autonomous Mobile Robot Stack',
+    group: 'Robotics Systems',
     icon: Bot,
     description: 'An open-source ROS 2 stack for a warehouse autonomous mobile robot, covering navigation, mapping and task execution for warehouse automation scenarios.',
     themes: ['ROS 2', 'AMR Navigation', 'Warehouse Automation', 'Mapping & Localization', 'Task Execution', 'Fleet Robotics'],
@@ -120,16 +138,18 @@ export const openSourceSystems = [
     id: 'ros2-zero-to-robot',
     title: 'ROS 2: Zero to Robot',
     category: 'Open Robotics Education',
+    group: 'Robotics Education',
     icon: BookOpen,
     description: 'An open-source ROS 2 educational resource that takes readers from ROS 2 fundamentals to building a working robot, step by step.',
     themes: ['ROS 2', 'Robotics Education', 'Beginner to Robot', 'Open Source Curriculum'],
     github: 'https://github.com/Pouya-Mansournia/ros2-zero-to-robot',
-    documentation: 'https://github.com/Pouya-Mansournia/ros2-zero-to-robot#readme'
+    documentation: 'https://pouya-mansournia.github.io/ros2-zero-to-robot/'
   },
   {
     id: 'delivery-robot-ros',
     title: 'Delivery Robot ROS',
     category: 'Autonomous Delivery Robot Stack',
+    group: 'Robotics Systems',
     icon: Bot,
     description: 'An open-source ROS-based stack for an autonomous delivery robot, covering navigation, perception, and task execution for last-mile delivery scenarios.',
     themes: ['ROS', 'Delivery Robotics', 'Autonomous Navigation', 'Mobile Robots'],
@@ -844,3 +864,303 @@ export const productToolkitGroups = [
   { title: 'Business', items: ['Pricing', 'Business Models', 'GTM', 'RevOps', 'Unit Economics', 'Commercial Validation'] },
   { title: 'Delivery', items: ['Agile', 'Scrum', 'Cross-functional Leadership', 'Technical Planning', 'Architecture Collaboration', 'Product Operations'] }
 ];
+
+// ── Systems view: layered map of how the work connects ──────────────────
+// Ordered top (business) → bottom (physical). Each layer links to existing routes.
+export const systemLayers = [
+  {
+    id: 'operations',
+    title: 'Operations & Business',
+    blurb: 'Throughput, cost, service levels, and the operational outcomes a system is accountable for.',
+    tags: ['Operations', 'Product', 'Unit Economics'],
+    links: [
+      { label: 'Product Journey', route: 'product-journey' },
+      { label: 'Product & Venture Work', route: 'works' }
+    ]
+  },
+  {
+    id: 'decision',
+    title: 'Decision & Orchestration',
+    blurb: 'Mission planning, task decomposition, resource scheduling, and fleet-level coordination.',
+    tags: ['Orchestration', 'Scheduling', 'Resource Assignment'],
+    links: [
+      { label: 'Open-source decision systems', route: 'open-source' }
+    ]
+  },
+  {
+    id: 'twin',
+    title: 'Digital Twin & Simulation',
+    blurb: 'A simulation model that validates decisions and answers capacity questions before deployment.',
+    tags: ['Digital Twin', 'FlexSim', 'Capacity Analysis'],
+    links: [
+      { label: 'Intelligent Warehouse Digital Twin', route: 'case-warehouse-digital-twin' }
+    ]
+  },
+  {
+    id: 'autonomy',
+    title: 'ROS 2 & Autonomy',
+    blurb: 'Navigation, mapping, localization, and task execution across single and multi-robot systems.',
+    tags: ['ROS 2', 'SLAM', 'Nav2', 'Multi-Robot'],
+    links: [
+      { label: 'Robotics Platforms', route: 'work-robotics' },
+      { label: 'Wheeled Mobile Robots', route: 'work-wheels-robot' },
+      { label: 'Robotics Research', route: 'publications' }
+    ]
+  },
+  {
+    id: 'embedded',
+    title: 'Embedded & Edge',
+    blurb: 'Motor control, sensor interfaces, real-time firmware, and the electronics that close the loop.',
+    tags: ['STM32 / ESP32', 'PCB Design', 'Real-Time Control'],
+    links: [
+      { label: 'Embedded Electronics & PCB Design', route: 'work-electronics-design' },
+      { label: 'Industrial IoT Monitoring', route: 'blog-iot' }
+    ]
+  },
+  {
+    id: 'physical',
+    title: 'Physical Robots & Automation',
+    blurb: 'Mechanisms, drivetrains, conveyors, sorters, and machines built and deployed in the real world.',
+    tags: ['Mechanical Design', 'Drivetrain', 'Material Handling'],
+    links: [
+      { label: 'Wheel Sortation System', route: 'blog-sorter' },
+      { label: 'Conveyor & Material Handling', route: 'work-material-handling' },
+      { label: 'Precision Mechatronics', route: 'work-precision-positioning' }
+    ]
+  }
+];
+
+// Homepage "Featured Systems": four flagship system-level stories.
+export const featuredSystems = [
+  {
+    id: 'warehouse-digital-twin',
+    title: 'Intelligent Warehouse Digital Twin',
+    subtitle: 'Simulation, robot orchestration, and real-time warehouse intelligence.',
+    image: '/portfolio-images/digital-twin-overview.png',
+    imageAlt: 'Warehouse digital twin dashboard showing a FlexSim simulation and a ROS 2 robot fleet side by side with queue levels and processor utilization',
+    tags: ['Digital Twin', 'FlexSim', 'Robot Orchestration', 'FastAPI', 'ROS 2'],
+    kpis: [
+      { value: '3 layers', label: 'Simulation · Orchestration · Execution' },
+      { value: '25+ tests', label: 'Bridge + scheduler coverage' }
+    ],
+    route: 'case-warehouse-digital-twin',
+    repo: 'https://github.com/Pouya-Mansournia/flexsim-digital-twin'
+  },
+  {
+    id: 'warehouse-amr',
+    title: 'Warehouse AMR ROS 2',
+    subtitle: 'Autonomy for warehouse robots: SLAM, Nav2, and multi-robot task execution.',
+    image: '/portfolio-images/Autonomous Mobile Robot (AMR) Platform.jpg',
+    imageAlt: 'Autonomous mobile robot platform for warehouse automation',
+    tags: ['ROS 2', 'SLAM', 'Nav2', 'Multi-Robot', 'Warehouse Robotics'],
+    kpis: [
+      { value: 'ROS 2', label: 'Navigation + task stack' },
+      { value: 'Fleet', label: 'Multi-robot coordination' }
+    ],
+    route: 'work-robotics',
+    repo: 'https://github.com/Pouya-Mansournia/warehouse-amr-ros2'
+  },
+  {
+    id: 'delivery-robot',
+    title: 'Delivery Robot',
+    subtitle: 'A deployed last-mile robot as evidence of physical system execution.',
+    image: '/portfolio-images/Last-Mile Autonomous Delivery Robot Prototype.jpg',
+    imageAlt: 'Last-mile autonomous delivery robot prototype with six-wheel mobile platform and LiDAR navigation',
+    tags: ['Autonomous Mobility', 'Sensor Fusion', 'Field Testing', 'ROS'],
+    kpis: [
+      { value: '6-wheel', label: 'Active-suspension platform' },
+      { value: '20 kg', label: 'Payload, field-tested' }
+    ],
+    route: 'work-wheels-robot',
+    repo: 'https://github.com/Pouya-Mansournia/Delivery-Robot-ROS'
+  },
+  {
+    id: 'precision-mechatronics',
+    title: 'Precision Mechatronics',
+    subtitle: 'Flexure mechanisms, piezo actuation, and closed-loop precision positioning.',
+    image: '/portfolio-images/Piezo-Driven Fast Steering Mirror Actuator.png',
+    imageAlt: 'Piezo-driven fast steering mirror precision actuator with flexure mechanism for optical positioning',
+    tags: ['Piezo Actuation', 'Flexure Mechanism', 'Closed-Loop Control', 'Microradian'],
+    kpis: [
+      { value: 'µrad', label: 'Angular resolution' },
+      { value: 'STM32', label: 'Real-time control loop' }
+    ],
+    route: 'work-precision-positioning'
+  }
+];
+
+// "How I Build Systems": five-step operating loop (section 5).
+export const buildProcess = [
+  { n: '01', title: 'Model the System', text: 'Understand the physical, operational, technical, and product constraints before proposing a solution.' },
+  { n: '02', title: 'Separate Responsibilities', text: 'Simulation, orchestration, robot autonomy, embedded control, and business systems should not own the same decisions.' },
+  { n: '03', title: 'Build Measurable Loops', text: 'Observe → Understand → Decide → Execute → Measure. Every layer reports something you can act on.' },
+  { n: '04', title: 'Validate Before Scaling', text: 'Use simulation, experiments, and staged deployment before introducing unnecessary complexity.' },
+  { n: '05', title: 'Optimize the Whole System', text: 'Optimize system-level outcomes rather than isolated components.' }
+];
+
+export const buildProcessLoop = ['Observe', 'Understand', 'Decide', 'Execute', 'Measure'];
+
+// /systems/ page: work organized by system layer instead of chronology (section 6).
+export const systemsGroups = [
+  {
+    id: 'twin',
+    title: 'Digital Twin & Simulation',
+    blurb: 'Simulation models that validate decisions and answer capacity questions before deployment.',
+    items: [
+      { label: 'Intelligent Warehouse Digital Twin', route: 'case-warehouse-digital-twin', note: 'FlexSim model, telemetry bridge, and robot scheduling.' },
+      { label: 'Dimension & Point-Cloud Detection', route: 'blog-dimension-detection', note: '3D vision and measurement for logistics data capture.' }
+    ]
+  },
+  {
+    id: 'robotics',
+    title: 'Robotics & Autonomous Systems',
+    blurb: 'Mobile robots and autonomy stacks from research platforms to deployed prototypes.',
+    items: [
+      { label: 'Warehouse AMR (ROS 2)', href: 'https://github.com/Pouya-Mansournia/warehouse-amr-ros2', note: 'SLAM, Nav2, and multi-robot task execution.' },
+      { label: 'Delivery Robot', route: 'work-wheels-robot', note: 'Deployed last-mile mobile platform.' },
+      { label: 'Robotics Platforms', route: 'work-robotics', note: 'Rescue, competition, and applied mobile robots.' },
+      { label: 'UAV Systems', route: 'work-uav', note: 'Lightweight aerial platforms for RoboCup rescue.' }
+    ]
+  },
+  {
+    id: 'orchestration',
+    title: 'Orchestration & Decision Systems',
+    blurb: 'Mission planning, scheduling, and the decision layer that coordinates resources.',
+    items: [
+      { label: 'FlexSim Digital Twin repository', href: 'https://github.com/Pouya-Mansournia/flexsim-digital-twin', note: 'Mission, task, and resource-scheduling architecture behind the case study.' },
+      { label: 'ARCHON, a decision and architecture OS', href: 'https://github.com/Pouya-Mansournia/ARCHON', note: 'Decision and architecture system for AI-agent workflows.' },
+      { label: 'Reasoning Allocation in Multi-Robot Systems', route: 'publications', note: 'Research on when deeper reasoning helps or hurts robotic systems.' }
+    ]
+  },
+  {
+    id: 'embedded',
+    title: 'Embedded & Edge Systems',
+    blurb: 'Motor control, sensing, and real-time firmware that close the control loop.',
+    items: [
+      { label: 'Embedded Electronics & PCB Design', route: 'work-electronics-design', note: 'Motor drivers, piezo controllers, power management.' },
+      { label: 'Industrial IoT Monitoring Platform', route: 'blog-iot', note: 'ESP32 edge nodes and Ethernet controllers.' }
+    ]
+  },
+  {
+    id: 'precision',
+    title: 'Precision Mechatronics',
+    blurb: 'Flexure mechanisms, piezo actuation, and high-resolution positioning.',
+    items: [
+      { label: 'Piezo-Driven Fast Steering Mirror', route: 'work-precision-positioning', note: 'Flexure-based parallel kinematics, microradian resolution.' },
+      { label: 'Manipulators & End-Effectors', route: 'work-manipulator', note: 'Micromanipulators, grippers, and actuation design.' }
+    ]
+  },
+  {
+    id: 'industrial',
+    title: 'Industrial Automation',
+    blurb: 'Conveyors, sorters, and machines built and deployed at production scale.',
+    items: [
+      { label: 'High-Speed Wheel Sortation System', route: 'blog-sorter', note: '20+ units operational in fulfillment centers.' },
+      { label: 'Conveyor & Material Handling', route: 'work-material-handling', note: 'Roller systems, flow design, PLC automation.' },
+      { label: 'Put-to-Light / Pick-to-Light', route: 'blog-put-to-light', note: '4000 units deployed for warehouse operations.' },
+      { label: 'Industrial Machinery & Manufacturing', route: 'work-machinery', note: 'Production machines and field equipment.' }
+    ]
+  },
+  {
+    id: 'product',
+    title: 'Product & Technical Systems',
+    blurb: 'Turning engineering execution into products, ventures, and operating frameworks.',
+    items: [
+      { label: 'Product Journey', route: 'product-journey', note: 'From engineering execution to product and business ownership.' },
+      { label: 'FoundryOS', href: 'https://github.com/Pouya-Mansournia/FoundryOS', note: 'Open framework for structured product and venture execution.' }
+    ]
+  }
+];
+
+// Research themes shown above the existing publications list (§12).
+export const researchThemes = [
+  {
+    title: 'Adaptive Intelligence in Multi-Robot Systems',
+    text: 'When deeper reasoning improves robotic systems, and when latency, compute cost, and complexity reduce real-world performance.'
+  },
+  {
+    title: 'Robotics Systems Architecture',
+    text: 'How simulation, orchestration, autonomy, and physical execution should be separated and coordinated.'
+  },
+  {
+    title: 'Precision & Embedded Mechatronics',
+    text: 'Sensing, control, actuation, flexure mechanisms, and precision engineering.'
+  }
+];
+
+// Product Journey executive arc (shown as a strip above the full page).
+export const productJourneyArc = ['Engineer', 'Engineering Manager', 'Systems Owner', 'Founder', 'Product & Technical Strategy'];
+
+// Case study content: Intelligent Warehouse Digital Twin (section 9).
+// Prose-first, rendered in the site's long-form article layout.
+export const caseWarehouseDigitalTwin = {
+  route: 'case-warehouse-digital-twin',
+  title: 'From Warehouse Simulation to Robot Orchestration',
+  subtitle: 'A digital-twin architecture where simulation validates decisions, an orchestration layer makes them, and ROS 2 executes robot-level behavior.',
+  image: '/portfolio-images/digital-twin-overview.png',
+  imageAlt: 'Warehouse digital twin dashboard showing a FlexSim simulation and a ROS 2 robot fleet side by side with queue levels, processor utilization, and fleet telemetry',
+  repo: 'https://github.com/Pouya-Mansournia/flexsim-digital-twin',
+  role: 'Architecture and implementation',
+  timeframe: '2026',
+  tags: ['Digital Twin', 'FlexSim', 'Robot Orchestration', 'FastAPI', 'ROS 2', 'Warehouse Automation'],
+  pipeline: ['FlexSim model', 'Telemetry bridge', 'Orchestration and scheduling', 'ROS 2 execution', 'Physical robots'],
+  concept: 'FlexSim validates decisions. The orchestration layer makes decisions. ROS 2 executes robot behavior.',
+  sections: [
+    {
+      n: '01',
+      title: 'The problem',
+      paragraphs: [
+        'Warehouse automation questions are usually answered before the system exists. How many robots can we add before the inbound queue backs up? Which bottleneck actually limits throughput? What happens when a robot drops out mid-shift? In practice these get answered with spreadsheets, vendor claims, and intuition, and the real answer only arrives once the hardware is on the floor.',
+        'I wanted an environment where a decision could be simulated, coordinated, and executed through the same architecture that would eventually run in production, so that the model answering "should we build it" is the one that later runs it.'
+      ]
+    },
+    {
+      n: '02',
+      title: 'Context and constraints',
+      paragraphs: [
+        'A warehouse automation stack has three parts that are normally built by different teams with incompatible interfaces: a simulation model, an orchestration layer that assigns work, and a robot fleet that carries it out. The goal was one architecture where each layer owns a distinct responsibility and can be replaced on its own.',
+        'FlexSim can only talk to the outside world over HTTP and JSON, with strict case-sensitive method handling and tight limits on model parameter types, so the integration had to be deliberate rather than clever. Simulation telemetry and real-environment telemetry had to stay in separate stores, because merging them hides exactly the differences the twin exists to show. The robot side had to be swappable: a mock fleet now, ROS 2 later, with no change to the API contract. And the whole thing had to start on a single Windows workstation in about a minute so it could be shown, not just described.'
+      ]
+    },
+    {
+      n: '03',
+      title: 'System architecture',
+      paragraphs: [
+        'A FlexSim 2027 warehouse model runs inbound sortation and outbound put-wall operations and posts queue, processor, and robot telemetry to a bridge every few simulated seconds. The bridge is a FastAPI service that keeps simulation and real-environment state in separate stores, exposes REST endpoints for both, serves a live dashboard, and dispatches commands back out.',
+        'Behind the bridge sits the orchestration layer. It turns a business request into a transport mission, decomposes the mission into tasks, and assigns each task to a robot using an explicit weighted score over travel cost, battery, queue backlog, utilization, and priority. Fleet, workstation, and traffic managers track availability, readiness, and congestion so the scheduler is working from a current picture rather than a stale one.',
+        'On the robot side, a Python fleet simulator with realistic acceleration and deceleration stands in for the machines today. A future ROS 2 and Nav2 adapter drops into the same interface without touching the contract above it, and the same orchestration decisions later reach physical robots and, beyond that, WMS, MES, ERP, and PLC or OPC UA integration.'
+      ]
+    },
+    {
+      n: '04',
+      title: 'What I owned',
+      paragraphs: [
+        'I designed and built the whole path end to end: the FlexScript telemetry integration and its verified-scripts reference, the FastAPI bridge with its telemetry ingestion, real-environment endpoints, command dispatch, and decision observability, and the orchestration core with the mission and task managers and the weighted resource scheduler.',
+        'I also built the live dashboard as a no-build vanilla-JS page that shows the simulation and the real environment side by side, and a test suite of more than twenty-five bridge tests plus unit tests for the scheduler and adapters, so the behavior is pinned down rather than assumed.'
+      ]
+    },
+    {
+      n: '05',
+      title: 'Engineering and product decisions',
+      paragraphs: [
+        'The decisions that mattered most were about boundaries. Keep FlexSim and real telemetry in independent stores behind one bridge. Define the robot side as an adapter so the mock fleet and a future ROS 2 stack are interchangeable. Make the scheduling policy an explicit weighted score rather than a hidden heuristic, so it can be read, argued with, and tested. Ship the dashboard with no build step so the twin stays inspectable without a toolchain.',
+        'On the product side, the public name is "Intelligent Warehouse Digital Twin" and the internal term "RMS" stays internal. Scope stayed narrow on purpose: one warehouse model, one scheduling policy, one fleet, working all the way through, rather than a broad system that only works in pieces. Fleet sizing and failure scenarios are treated as the first real questions the twin should answer for someone.'
+      ]
+    },
+    {
+      n: '06',
+      title: 'Results',
+      paragraphs: [
+        'The current version has a working FlexSim-to-bridge integration with a live dual-system dashboard, a mock fleet whose robot count can be changed live from that dashboard, and a tested scheduling policy running end to end against the real bridge.',
+        'It has already earned its keep as a discovery tool. Running the model surfaced a genuine bottleneck: an inbound queue with 172 totes in, 35 out, 137 queued, and an average wait above twelve minutes. That is a real downstream capacity mismatch in the modeled operation, not a simulation artifact, and it is exactly the kind of thing that is expensive to find after deployment.'
+      ]
+    },
+    {
+      n: '07',
+      title: 'What I learned',
+      paragraphs: [
+        'A digital twin is worth the effort when the architecture that answers "should we build it" is also the one that runs it. Separating decision-making from validation from execution is what lets each layer be replaced without disturbing the others, and it is also what makes the whole system measurable, because every layer now reports something you can act on.'
+      ]
+    }
+  ]
+};

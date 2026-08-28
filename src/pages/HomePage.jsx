@@ -5,7 +5,7 @@ import { useTypewriter } from '../hooks/useTypewriter.js';
 import { useInView } from '../hooks/useInView.js';
 import HeroVideoBackground from '../components/HeroVideoBackground.jsx';
 import { OpenSourceTeaser } from '../components/OpenSourceSystems.jsx';
-import { FeaturedWriting } from '../components/FeaturedWriting.jsx';
+import BuildProcess from '../components/BuildProcess.jsx';
 import { navigateTo, routeHref } from '../navigation.js';
 
 const pillars = [
@@ -182,7 +182,7 @@ export default function HomePage() {
         </div>
       </div>
 
-      <FeaturedWriting />
+      <BuildProcess />
 
       <OpenSourceTeaser />
     </section>
